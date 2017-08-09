@@ -1,0 +1,26 @@
+<!--pages/forget/forget.wxml-->
+
+<view class="inputwp">
+<form bindsubmit="register" bindreset="formReset">
+<form bindsubmit="send_verify" bindreset="formReset">
+        <view class="input">
+        <input name="phone" type="text" placeholder="输入手机号码" /> 
+        </view>
+        <view class="input inputsp">
+        <input name="verify_code" class="inputsptext input" type="text" placeholder="输入手机验证码" /> 
+        <!--<view class="inputspbtn input" form-type="submit">获取验证码</view>-->
+        <button class="inputspbtn input" form-type="submit">发送验证码</button>
+        </view>
+</form>
+
+        <view class="input">
+        <input name="password" type="password" placeholder="密码（6-18位）" /> 
+        </view>
+        <view class="input">
+        <input name="repassword" type="password" placeholder="确认密码" /> 
+        </view>
+        <button formType="submit" class="submit">提交</button>
+</form>
+</view>
+
+

@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+<view class="groups-txt">
+<view class="groups-title">拼团详情</view>
+</view>
+
+
+<view class="groups-wrap">
+    <view class="groups-lf">
+        <image class="groups-img" src="../../image/pintuan1.png"></image>
+    </view>
+    <view class="groups-rt">
+        <view class="groups-text">欧诗漫补水保湿玻尿酸面膜贴女冬清洁收
+缩毛孔免洗非海藻睡眠蚕丝 深入渗透 </view>
+        <view class="groups-attrbute">
+        化妆品净含量:10片
+        </view>
+        <view class="groups-price">
+        <view class="groups-jg">￥39.00</view>
+        <view class="groups-yj">原价：￥88</view>
+        </view>
+    </view>
+</view>
+
+<view class="groupfail-content">
+   
+    <view class="content-img">
+    <image class="content-favion" src="../../image/pintuan3.png"></image>
+    <image class="content-favion" src="../../image/pintuan6.png"></image>
+    </view>
+     <view class="groupfail-txt">
+     拼团失败了，款项将返还到您的指定银行卡~
+    </view>
+    <button class="restart">再次开团</button>
+</view>
+
+</view>

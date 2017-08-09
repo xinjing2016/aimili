@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<!--<view class="groups-txt">
+<view class="groups-title">分类</view>
+</view>-->
+<!--分类导航-->
+<view class="banner-classify">
+  <view  bindtap="tap" data-id="1" class="banner-style {{currentTap=='1' ? 'banner-select':''}}">
+    类目
+  </view>
+  <view  bindtap="tap" data-id="2"  class="banner-style {{currentTap=='2' ? 'banner-select':''}}">
+    品牌
+  </view>
+  <view  bindtap="tap" data-id="3"  class="banner-style {{currentTap=='3' ? 'banner-select':''}}">
+    国家馆
+  </view>
+</view>
+
+<!--品牌logo-->
+ <view class="all-wrap {{currentTap== 2? 'active': ''}}">
+<view class="banenr-wrap">
+<view class="banner-all">
+            全部品牌
+</view>
+    <view class="banner-row" wx:for="{{brand}}" wx:for-item="item" wx:key="">
+        <navigator url="../../pages/goods_list/goods_list?page=2&key=brand&keyword={{item['name']}}">
+        <image class="banner-img" src="{{item['brand_img']}}"></image>
+        </navigator>
+    </view>
+
+</view>
+
+    </view>
+
+<!--分类-->
+<view class="sort-goods {{currentTap== 1? 'active': ''}}">
+<view ><!--循环-->
+<view wx:for="{{style}}" wx:for-item="item" wx:key="">
+    <view class="sort-titile">
+        {{item["name"]}}
+    </view>
+    <view class="sort-wrap">
+    <view  wx:for="{{item['function']}}" wx:for-item="ite" wx:key="">
+        <navigator url="../../pages/goods_list/goods_list?page=2&key=function&keyword={{ite['function']}}">
+        <view class="sort-name">{{ite["function"]}}</view>
+        </navigator>
+    </view>        
+    </view>
+</view>
+</view ><!--循环-->
+</view>
+
+<!--国家馆-->
+<view class="nation-wrap {{currentTap==3?'active':''}}">
+<view  wx:for="{{nation}}" wx:for-item="item" wx:key="">
+        <navigator url="../../pages/nation_goods/nation_goods?name={{item['name']}}">
+        <image class="nation-img" src="{{item['img_url']}}"></image>
+        </navigator>
+</view>
+</view>

@@ -1,0 +1,30 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+view{
+  font-family: "苹方";
+  
+}
+/*view *{
+  vertical-align:middle;
+}
+view:before{
+  height: 100%;
+  width: 0;
+  content: "";
+  display: inline-block;
+  vertical-align:middle;
+}*/
+
+input{
+  font-family: "苹方";
+}
+

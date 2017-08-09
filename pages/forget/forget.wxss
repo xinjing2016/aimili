@@ -1,0 +1,11 @@
+/* pages/forget/forget.wxss */
+page{background: #eee;}
+.inputwp{background: white;padding: 15rpx 0;}
+.input{border: 1px solid #eee;margin: 0rpx auto;width: 96%;border-radius: 10rpx;margin-bottom: 20rpx;height: 80rpx;line-height: 80rpx;}
+.inputsp{display: flex;justify-content: space-between;border: none;}
+input{height: 80rpx;line-height: 80rpx;padding-left: 20rpx;}
+.inputsptext{width: 65%;margin: 0;}
+.inputspbtn{width:28%;font-size: 30rpx;border: 1px solid palevioletred;text-align: center;color: deeppink;margin: 0;}
+.submit{width:60%;background:#f65d89;color: white;text-align: center;margin: 20rpx auto;padding: 0rpx 0;display: block;}
+
+

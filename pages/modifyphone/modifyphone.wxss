@@ -1,0 +1,124 @@
+/**index.wxss**/
+.container{margin: 0;padding:0;}
+page{
+  background: #ebebeb;
+}
+.header{
+  width:750rpx;
+  height:160rpx;
+  background:#f65d89;
+  }
+.se_logo{
+  width:60rpx;
+  cursor:pointer;
+   display:block;
+   margin-top: 55rpx;
+   float:left;
+   }
+.se_image{
+  height:50rpx;
+  width:60rpx;
+  }
+.aml_input{
+  margin-left: 25rpx;
+  margin-bottom: 20rpx;
+  height: 50rpx;
+  width:640rpx;
+  border-radius: 10rpx;
+  border: 1px solid #ccc;
+  padding:10rpx 20rpx;
+  
+}
+
+.forget-form{
+  width: 750rpx;
+  background: #fff;
+  padding: 20rpx 0rpx;
+  font-size: 32rpx;
+}
+.re_submit{
+  width:600rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  background: #f65d89;
+  color: #fff;
+  font-family: '黑体';
+  margin-top:20rpx;
+}
+
+.phone_identify{
+  
+  height: 50rpx;
+  margin:0rpx 20rpx 20rpx 25rpx;
+  float: left;
+  width:300rpx;
+  border-radius: 10rpx;
+  border: 1px solid #ccc;
+  padding:10rpx 20rpx;
+}
+.get_identify{
+  font-size: 32rpx;
+  margin-top:5rpx;
+  float: left;
+  width:310rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  background: #fff;
+  color: #f65d89;
+  border: 1px solid #f65d89;
+}
+.re_submit{
+  width:600rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  background: #f65d89;
+  color: #fff;
+  font-family: '黑体'
+}
+.re_font{
+  color: #bbbbbb;
+  font-size:30rpx;
+  margin: 20rpx;
+}
+
+
+
+/*分割线*/
+.tline{
+  height: 20rpx;
+  width: 750rpx;
+  background: #28cee7;
+}
+.forget-password{
+    width:200rpx;
+    height: 80px;
+    float: left;
+    font-family: '黑体';
+    margin-top:55rpx;
+    margin-left:205rpx;
+    color:#fff;
+    font-size:44rpx;
+    text-align: center;
+    margin-right: 20rpx;
+}
+.modify-password{
+    width:300rpx;
+    height: 80px;
+    float: left;
+    font-family: '黑体';
+    margin-top:55rpx;
+    margin-left:165rpx;
+    color:#fff;
+    font-size:44rpx;
+    text-align: center;
+    margin-right: 20rpx;
+}
+.myPhone{
+  color:#999;
+line-height:70rpx;
+height:60rpx;
+width:100%;
+background:white;
+text-align:center;
+
+}

@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<!--反馈-->
+<!--<view class="about-head">
+  <view class="about-title">反馈</view>
+</view>-->
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+<view class="about-wrap">
+<view class="section">
+  <textarea class="feedback-text" placeholder="感谢您的建议，让我们做的更好" auto-focus name="content"/>
+</view>
+</view>
+
+<view>
+  <button class="feedback-button" form-type="submit">提交反馈</button>
+</view>
+
+</form>

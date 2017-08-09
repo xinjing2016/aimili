@@ -1,0 +1,75 @@
+<!--index.wxml-->
+ <!--<view class="container">
+ <view class="header">
+    <view >
+    	<text class="aml_title">购物车</text>
+    </view>
+    <view>
+      <navigator class="cart_edit" url="url">
+        编辑
+      </navigator>
+    </view>
+ </view>
+ </view>-->
+<!--<scroll-view scroll-y="true" style="height:1040rpx;">-->
+
+<view class="section">
+<checkbox-group class="radio-group" bindchange="change">
+<!--<label class="radio" >-->
+
+<view wx:for="{{goods}}" wx:for-index="index" wx:for-item="item" wx:key="">
+  <view class="cart_wrp">
+    <view class="ca_radio">
+   <checkbox checked="{{item.checked}}" value="{{index}}"> </checkbox>
+   <image src="{{item.gouxuan}}" data-name="f1" class="pos_img"></image>
+   </view>
+    <navigator url="../../pages/goods/goods?goods_id={{item.goods_id}}">
+    <view class="cart_lf">
+      <image class="cart_img" src="{{item.display_img[0]}}"></image>
+    </view>
+    </navigator>
+    <view class="cart_rt">
+    <!--<text class="cart_txt">
+    {{item.content}}
+    </text>-->
+    <view class="cart_txt">{{item.content}}</view>
+     
+    		<view class="cart_price">
+    			<text class="price_jg">¥{{item.discount_price}}</text>
+          <text class="price_yj">原价:¥{{item.price}}</text>
+    		</view>
+        <view class="cart_num">
+          <image class="minus" src="../../image/minus.png" data-index="{{index}}" bindtap="decrease"></image>
+          <p class="goods_num">{{item.num}}</p>
+          <image class="plus" src="../../image/plus.png" bindtap="increase" data-index="{{index}}"></image>
+        </view>
+    </view>
+    </view>
+  </view>
+
+<!--</label>-->
+</checkbox-group>
+</view>
+<!--</scroll-view>-->
+<view style="width:750rpx;height:1rpx;"></view>
+
+<!--购物车结算-->
+<view class="cart_total">
+  <view class="cart_total_lf">
+  <checkbox bindtap="select_all">全选</checkbox>
+  <image src="{{quanxuan}}" data-name="f1" class="pos_img2"></image>
+  <text class="bottom_text">全选</text>  
+  </view>
+  
+  <view class="cart_total_rt">
+  <button class="total_button" bindtap="submit">结算</button>
+    <view class="total_price">
+    <p class="heji">合计:¥{{add_price}}</p>
+    <p class="discount">已优惠:{{discount}}</p>
+    </view>
+    
+  </view>
+</view>
+
+
+

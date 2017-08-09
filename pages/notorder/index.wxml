@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+ <view class="header">
+    <view>
+    	<text class="order_title">我的订单</text>
+    </view>
+ </view>
+
+<view class="myorder-nav">
+  <navigator url="url" class="order-nav selected">全部</navigator>
+  <navigator url="url" class="order-nav">待付款</navigator>
+  <navigator url="url" class="order-nav">待成团</navigator>
+  <navigator url="url" class="order-nav">待发货</navigator>
+  <navigator url="url" class="order-nav">待收货</navigator>
+  <navigator url="url" class="order-nav">待评价</navigator>
+</view>
+
+<view class="unpay-wrap">
+    <image class="unpay-img" src="../../image/unpay_03.png"></image>
+    <view class="unpay-text">您还没有相关的订单</view>
+    <button class="unpay-button" hover-class="unpay-button1">快去逛逛吧</button>
+</view>
+
+
+</view>

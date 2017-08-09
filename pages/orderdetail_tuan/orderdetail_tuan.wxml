@@ -1,0 +1,658 @@
+<!--index.wxml-->
+
+                    <!--普通订单-->
+<block wx:if="{{order['order_type']==0}}">
+
+                     <!--待付款-->
+     <block wx:if="{{order['order_type']==0 &&order['pay']==0 && order['cancel']==0 && order['deliver_out']==0&& order['confirm']==0&& order['evaluate']==0}}">
+     
+        <view class="orderdetail-tip">
+            <view class="tip-lf">
+                <view class="orderdetail-status">等待买家付款</view>
+               
+            </view>
+            <view class="tip-rt">
+                <image class="tip-img" src="../../image/orderdetail_03.png"></image>
+            </view>
+            <view >
+            </view>
+        </view>
+
+        <view class="order-address">
+            <image class="location-img" src="../../image/orderdetail_07.png"></image>
+            <view class="location-text">
+            <view class="user-naem">{{order['consignee_name']}} {{order['consignee_phone']}}</view>
+            <view class="user-address">{{order['detail_address']}}</view>
+            </view>
+        </view>
+
+
+        <view><!--循环开始-->
+        <view class="myorder-wrap">
+            <view class="myorder-list1">
+            <view class="myorder-status">待支付</view>
+            </view>
+            <block wx:for="{{order['goods']}}" wx:for-item="ite" wx:key="">
+                <view class="myorder-list2">
+                    <view class="myorder-img"><image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+                    </view>
+                
+                    <view class="myorder-text">{{ite['name']}}
+                        <!--<view class="goods-attribute">化妆品净含量：10片</view>-->
+                    </view>
+                    <view class="myorder-price">
+                        <view class="goods-price">￥{{ite['discount_price']}}</view>
+                        <view class="goods-quantity">x{{ite['goods_num']}}</view>
+                    </view>
+                </view>
+            </block>
+            
+            <view class="myorder-list5">
+            <view class="list5lf">优惠券</view>
+            
+            <view class="list5rt">
+            <block wx:if="{{order['use_coupon']==1}}">
+                {{order['coupon_name']}}
+            </block>
+            <block wx:else>
+                无使用优惠券
+            </block>
+            
+            </view>
+            <view class="list5lf">运费</view>
+            <view class="list5rt">包邮</view>
+            <view class="myorder-total">共{{order['add_num']}}件商品 合计：￥{{order['amount']}}元</view>
+            </view>
+            <view style="clear:both"></view>
+            <view class="myorder-list6">
+            <view class="myorder-edit">
+            <view class="myorder-editlf">需付款</view>
+            <view class="myorder-editrt">
+            <view class="goods-price">￥{{order['amount']}}元</view>
+            </view>
+            </view>
+            </view>
+        </view>
+        </view><!--循环结束-->
+
+        <view class="orderdetail-info">
+            <view>订单编号：{{order['order_id']}}</view>
+            <view>支付方式：
+                <block wx:if="{{order['pay_type']==1}}">货到付款</block>
+                 <block wx:elif="{{order['pay_type']==2}}">微信支付</block>
+                <block wx:else>余额支付</block>
+            </view>
+            <view>下单时间：{{order['order_time']}}</view>
+        </view>
+     </block>
+
+
+                           <!--待发货-->
+     <block wx:elif="{{order['order_type']==0 &&order['pay']==1 && order['cancel']==0 && order['deliver_out']==0&& order['confirm']==0&& order['evaluate']==0 }}">
+        <view class="orderdetail-tip">
+            <view class="tip-lf">
+                <view class="orderdetail-status">等待发货</view>
+            </view>
+            <view class="tip-rt">
+                <image class="tip-img" src="../../image/orderdetail_03.png"></image>
+            </view>
+            <view >
+            </view>
+        </view>
+
+        <view class="order-address">
+            <image class="location-img" src="../../image/orderdetail_07.png"></image>
+            <view class="location-text">
+            <view class="user-naem">{{order['consignee_name']}} {{order['consignee_phone']}}</view>
+            <view class="user-address">{{order['detail_address']}}</view>
+            </view>
+        </view>
+
+
+        <view><!--循环开始-->
+        <view class="myorder-wrap">
+            <view class="myorder-list1">
+            <view class="myorder-status">待发货</view>
+            </view>
+            <block wx:for="{{order['goods']}}" wx:for-item="ite" wx:key="">
+                <view class="myorder-list2">
+                    <view class="myorder-img"><image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+                    </view>
+                
+                    <view class="myorder-text">{{ite['name']}}
+                       <!-- <view class="goods-attribute">化妆品净含量：10片</view> -->
+                    </view>
+                    <view class="myorder-price">
+                        <view class="goods-price">￥{{ite['discount_price']}}</view>
+                        <view class="goods-quantity">x{{ite['goods_num']}}</view>
+                    </view>
+                </view>
+            </block>
+            
+            <view class="myorder-list5">
+            <view class="list5lf">优惠券</view>
+            
+            <view class="list5rt">
+            <block wx:if="{{order['use_coupon']==1}}">
+                {{order['coupon_name']}}
+            </block>
+            <block wx:else>
+                无使用优惠券
+            </block>
+            
+            </view>
+            <view class="list5lf">运费</view>
+            <view class="list5rt">包邮</view>
+            <view class="myorder-total">共{{order['add_num']}}件商品 合计：￥{{order['amount']}}元</view>
+            </view>
+            <view style="clear:both"></view>
+            <view class="myorder-list6">
+            <view class="myorder-edit">
+            <view class="myorder-editlf">金额</view>
+            <view class="myorder-editrt">
+            <view class="goods-price">￥{{order['amount']}}元</view>
+            </view>
+            </view>
+            </view>
+        </view>
+        </view><!--循环结束-->
+
+        <view class="orderdetail-info">
+            <view>订单编号：{{order['order_id']}}</view>
+            <view>支付方式：
+                <block wx:if="{{order['pay_type']==1}}">货到付款</block>
+                 <block wx:elif="{{order['pay_type']==2}}">微信支付</block>
+                <block wx:else>余额支付</block>
+            </view>
+            <view>下单时间：{{order['order_time']}}</view>
+        </view>
+     </block>
+
+
+                        <!--待收货-->
+     <block wx:elif="{{order['order_type']==0 &&order['pay']==1 && order['cancel']==0 && order['deliver_out']==1&& order['confirm']==0&& order['evaluate']==0 }}">
+        <view class="orderdetail-tip">
+            <view class="tip-lf">
+                <view class="orderdetail-status">等待收货</view>
+            </view>
+            <view class="tip-rt">
+                <image class="tip-img" src="../../image/orderdetail_03.png"></image>
+            </view>
+            <view >
+            </view>
+        </view>
+
+        <view class="order-address">
+            <image class="location-img" src="../../image/orderdetail_07.png"></image>
+            <view class="location-text">
+            <view class="user-naem">{{order['consignee_name']}} {{order['consignee_phone']}}</view>
+            <view class="user-address">{{order['detail_address']}}</view>
+            </view>
+        </view>
+
+
+        <view><!--循环开始-->
+        <view class="myorder-wrap">
+            <view class="myorder-list1">
+            <view class="myorder-status">待收货</view>
+            </view>
+            <block wx:for="{{order['goods']}}" wx:for-item="ite" wx:key="">
+                <view class="myorder-list2">
+                    <view class="myorder-img"><image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+                    </view>
+                
+                    <view class="myorder-text">{{ite['name']}}
+                        <!--<view class="goods-attribute">化妆品净含量：10片</view>-->
+                    </view>
+                    <view class="myorder-price">
+                        <view class="goods-price">￥{{ite['discount_price']}}</view>
+                        <view class="goods-quantity">x{{ite['goods_num']}}</view>
+                    </view>
+                </view>
+            </block>
+            
+            <view class="myorder-list5">
+            <view class="list5lf">优惠券</view>
+            
+            <view class="list5rt">
+            <block wx:if="{{order['use_coupon']==1}}">
+                {{order['coupon_name']}}
+            </block>
+            <block wx:else>
+                无使用优惠券
+            </block>
+            
+            </view>
+            <view class="list5lf">运费</view>
+            <view class="list5rt">包邮</view>
+            <view class="myorder-total">共{{order['add_num']}}件商品 合计：￥{{order['amount']}}元</view>
+            </view>
+            <view style="clear:both"></view>
+            <view class="myorder-list6">
+            <view class="myorder-edit">
+            <view class="myorder-editlf">金额</view>
+            <view class="myorder-editrt">
+            <view class="goods-price">￥{{order['amount']}}元</view>
+            </view>
+            </view>
+            </view>
+        </view>
+        </view><!--循环结束-->
+
+        <view class="orderdetail-info">
+            <view>订单编号：{{order['order_id']}}</view>
+            <view>支付方式：
+                <block wx:if="{{order['pay_type']==1}}">货到付款</block>
+                 <block wx:elif="{{order['pay_type']==2}}">微信支付</block>
+                <block wx:else>余额支付</block>
+            </view>
+            <view>下单时间：{{order['order_time']}}</view>
+            <view>快递公司：{{order['deliver_name']}}</view>
+            <view>快递单号：{{order['deliver_id']}}</view>
+        </view>
+     </block>
+
+
+                      <!--待评价-->
+     <block wx:elif="{{order['order_type']==0 &&order['pay']==1 && order['cancel']==0 && order['deliver_out']==1&& order['confirm']==1&& order['evaluate']==0 }}">
+        <view class="orderdetail-tip">
+            <view class="tip-lf">
+                <view class="orderdetail-status">等待评价</view>
+            </view>
+            <view class="tip-rt">
+                <image class="tip-img" src="../../image/orderdetail_03.png"></image>
+            </view>
+            <view >
+            </view>
+        </view>
+
+        <view class="order-address">
+            <image class="location-img" src="../../image/orderdetail_07.png"></image>
+            <view class="location-text">
+            <view class="user-naem">{{order['consignee_name']}} {{order['consignee_phone']}}</view>
+            <view class="user-address">{{order['detail_address']}}</view>
+            </view>
+        </view>
+
+
+        <view><!--循环开始-->
+        <view class="myorder-wrap">
+            <view class="myorder-list1">
+            <!--<view class="myorder-shop">欧诗漫</view>-->
+            <view class="myorder-status">待评价</view>
+            </view>
+            <block wx:for="{{order['goods']}}" wx:for-item="ite" wx:key="">
+                <view class="myorder-list2">
+                    <view class="myorder-img"><image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+                    </view>
+                
+                    <view class="myorder-text">{{ite['name']}}
+                        <!--<view class="goods-attribute">化妆品净含量：10片</view> -->
+                    </view>
+                    <view class="myorder-price">
+                        <view class="goods-price">￥{{ite['discount_price']}}</view>
+                        <view class="goods-quantity">x{{ite['goods_num']}}</view>
+                    </view>
+                </view>
+            </block>
+            
+            <view class="myorder-list5">
+            <view class="list5lf">优惠券</view>
+            
+            <view class="list5rt">
+            <block wx:if="{{order['use_coupon']==1}}">
+                {{order['coupon_name']}}
+            </block>
+            <block wx:else>
+                无使用优惠券
+            </block>
+            
+            </view>
+            <view class="list5lf">运费</view>
+            <view class="list5rt">包邮</view>
+            <view class="myorder-total">共{{order['add_num']}}件商品 合计：￥{{order['amount']}}元</view>
+            </view>
+            <view style="clear:both"></view>
+            <view class="myorder-list6">
+            <view class="myorder-edit">
+            <view class="myorder-editlf">金额</view>
+            <view class="myorder-editrt">
+            <view class="goods-price">￥{{order['amount']}}元</view>
+            </view>
+            </view>
+            </view>
+        </view>
+        </view><!--循环结束-->
+
+        <view class="orderdetail-info">
+            <view>订单编号：{{order['order_id']}}</view>
+            <view>支付方式：
+                <block wx:if="{{order['pay_type']==1}}">货到付款</block>
+                 <block wx:elif="{{order['pay_type']==2}}">微信支付</block>
+                <block wx:else>余额支付</block>
+            </view>
+            <view>下单时间：{{order['order_time']}}</view>
+        </view>
+     </block>
+
+
+                       <!--取消订单-->
+     <block wx:elif="{{order['order_type']==0 &&order['pay']==1 && order['cancel']==1 && order['deliver_out']==0&& order['confirm']==0&& order['evaluate']==0 }}">
+        <view class="orderdetail-tip">
+            <view class="tip-lf">
+                <view class="orderdetail-status">订单取消</view>
+            </view>
+            <view class="tip-rt">
+                <image class="tip-img" src="../../image/order_cancael.png"></image>
+            </view>
+            <view >
+            </view>
+        </view>
+
+        <view class="order-address">
+            <image class="location-img" src="../../image/orderdetail_07.png"></image>
+            <view class="location-text">
+            <view class="user-naem">{{order['consignee_name']}} {{order['consignee_phone']}}</view>
+            <view class="user-address">{{order['detail_address']}}</view>
+            </view>
+        </view>
+
+
+        <view><!--循环开始-->
+        <view class="myorder-wrap">
+            <view class="myorder-list1">
+            <!--<view class="myorder-shop">欧诗漫</view>-->
+            <view class="myorder-status">已取消</view>
+            </view>
+            <block wx:for="{{order['goods']}}" wx:for-item="ite" wx:key="">
+                <view class="myorder-list2">
+                    <view class="myorder-img"><image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+                    </view>
+                
+                    <view class="myorder-text">{{ite['name']}}
+                        <!--<view class="goods-attribute">化妆品净含量：10片</view> -->
+                    </view>
+                    <view class="myorder-price">
+                        <view class="goods-price">￥{{ite['discount_price']}}</view>
+                        <view class="goods-quantity">x{{ite['goods_num']}}</view>
+                    </view>
+                </view>
+            </block>
+            
+            <view class="myorder-list5">
+            <view class="list5lf">优惠券</view>
+            
+            <view class="list5rt">
+            <block wx:if="{{order['use_coupon']==1}}">
+                {{order['coupon_name']}}
+            </block>
+            <block wx:else>
+                无使用优惠券
+            </block>
+            
+            </view>
+            <view class="list5lf">运费</view>
+            <view class="list5rt">包邮</view>
+            <view class="myorder-total">共{{order['add_num']}}件商品 合计：￥{{order['amount']}}元</view>
+            </view>
+            <view style="clear:both"></view>
+            <view class="myorder-list6">
+            <view class="myorder-edit">
+            <view class="myorder-editlf">金额</view>
+            <view class="myorder-editrt">
+            <view class="goods-price">￥{{order['amount']}}元</view>
+            </view>
+            </view>
+            </view>
+        </view>
+        </view><!--循环结束-->
+
+        <view class="orderdetail-info">
+            <view>订单编号：{{order['order_id']}}</view>
+            <view>支付方式：
+                <block wx:if="{{order['pay_type']==1}}">货到付款</block>
+                 <block wx:elif="{{order['pay_type']==2}}">微信支付</block>
+                <block wx:else>余额支付</block>
+            </view>
+            <view>下单时间：{{order['order_time']}}</view>
+        </view>
+     </block>
+
+    
+    <!--
+     <block wx:else>
+        <view class="orderdetail-tip">
+            <view class="tip-lf">
+                <view class="orderdetail-status">订单完成</view>
+                <view class="order-close1">欢迎再次光临</view>
+            </view>
+            <view class="tip-rt">
+                <image class="tip-img" src="../../image/order_cancael.png"></image>
+            </view>
+            <view >
+            </view>
+        </view>
+
+        <view class="order-address">
+            <image class="location-img" src="../../image/orderdetail_07.png"></image>
+            <view class="location-text">
+            <view class="user-naem">{{order['consignee_name']}} {{order['consignee_phone']}}</view>
+            <view class="user-address">{{order['detail_address']}}</view>
+            </view>
+        </view>
+
+
+        <view>
+        <view class="myorder-wrap">
+            <view class="myorder-list1">
+            <view class="myorder-status">已完成</view>
+            </view>
+            <block wx:for="{{order['goods']}}" wx:for-item="ite" wx:key="">
+                <view class="myorder-list2">
+                    <view class="myorder-img"><image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+                    </view>
+                
+                    <view class="myorder-text">{{ite['name']}}
+                        <view class="goods-attribute">化妆品净含量：10片</view>
+                    </view>
+                    <view class="myorder-price">
+                        <view class="goods-price">￥{{ite['discount_price']}}</view>
+                        <view class="goods-quantity">x{{ite['goods_num']}}</view>
+                    </view>
+                </view>
+            </block>
+            
+            <view class="myorder-list5">
+            <view class="list5lf">优惠券</view>
+            
+            <view class="list5rt">
+            <block wx:if="{{order['use_coupon']==1}}">
+                {{order['coupon_name']}}
+            </block>
+            <block wx:else>
+                无使用优惠券
+            </block>
+            
+            </view>
+            <view class="list5lf">运费</view>
+            <view class="list5rt">包邮</view>
+            <view class="myorder-total">共{{order['add_num']}}件商品 合计：{{order['amount']}}</view>
+            </view>
+            <view style="clear:both"></view>
+            <view class="myorder-list6">
+            <view class="myorder-edit">
+            <view class="myorder-editlf">金额</view>
+            <view class="myorder-editrt">
+            <view class="goods-price">￥{{order['amount']}}</view>
+            </view>
+            </view>
+            </view>
+        </view>
+        </view>
+
+        <view class="orderdetail-info">
+            <view>订单编号：{{order['order_id']}}</view>
+            <view>支付方式：
+                <block wx:if="{{order['pay_type']==1}}">货到付款</block>
+                 <block wx:elif="{{order['pay_type']==2}}">微信支付</block>
+                <block wx:else>余额支付</block>
+            </view>
+            <view>下单时间：{{order['order_time']}}</view>
+        </view>
+     </block>
+     -->
+</block>
+
+                      <!--团购订单-->
+<block wx:elif="{{order['order_type']==1}}">
+
+                       <!--拼团差一人-->
+    <block wx:if="{{order['grouped']==0}}">
+        <view class="groups-wrap">
+            <view class="groups-lf">
+                <image class="groups-img" src="{{order['goods'][0]['display_img'][0]}}"></image>
+            </view>
+            <view class="groups-rt">
+                <view class="groups-text">
+                    {{order['goods'][0]['name']}}
+                </view>
+<!-- <view class="groups-attrbute">化妆品净含量:10片</view> -->
+                <view class="groups-price">
+                    <view class="groups-jg">￥{{order['discount_price']}}</view>
+                    <view class="groups-yj">原价：￥{{order['goods'][0]['price']}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="grouping-content">
+            <view class="content-txt content-text">
+                <image class="content-ye" src="../../image/pintuan2.png"></image>拼团中，还差一个人，快去邀请好友吧~
+            </view>   
+            <view class="content-img">
+                <image class="grouping-favion" src="{{img_satar}}"></image>
+                <image class="grouping-favion" src="../../image/pintuan6.png"></image>
+            </view>
+            <view class="countdown">
+                剩余:<text class="countdown1"> {{clock}}</text>  
+                <text >{{micro_second}}</text>      
+            </view>
+            <view class="content-status"> 倒计时结束前人未满将拼团失败</view>
+        </view>
+
+        <view class="groups-list">
+            <view class="groups-list-lf">商品名称 </view>
+            <view class="groups-list-rt clr-pink">{{order['goods'][0]['name']}}</view>
+        </view>
+
+        <view class="groups-list">
+            <view class="groups-list-lf">参团时间 </view>
+            <view class="groups-list-rt">{{order['order_time']}}</view>
+        </view>
+              <view class="orderdetail-info">
+            <view>订单编号：{{order['order_id']}}</view>
+            <view>支付方式：
+                <block wx:if="{{order['pay_type']==1}}">货到付款</block>
+                 <block wx:elif="{{order['pay_type']==2}}">微信支付</block>
+                <block wx:else>余额支付</block>
+            </view>
+            <view>下单时间：{{order['order_time']}}</view>
+        </view>
+
+    </block>
+
+                         <!--拼团成功-->
+    <block wx:if="{{ order['grouped']==1}}">
+        <view class="groups-wrap">
+            <view class="groups-lf">
+                <image class="groups-img" src="{{order['goods'][0]['display_img'][0]}}"></image>
+            </view>
+            <view class="groups-rt">
+                <view class="groups-text">
+                    {{order['goods'][0]['name']}}
+                </view>
+            <!--
+            <view class="groups-attrbute">化妆品净含量:10</view>
+            -->
+                <view class="groups-price">
+                <view class="groups-jg">￥{{order['goods'][0]['discount_price']}}</view>
+                <view class="groups-yj">原价：￥{{order['goods'][0]['price']}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="grouping-content">
+            <view class="content-txt1 content-text">
+            <image class="content-ye" src="../../image/pintuan2.png"></image>
+            拼团成功啦，可以再去逛逛哦~</view>
+            <block wx:if="{{order['deliver_out']==0}}">
+                <view class="content-status"> 商家正在努力发货中</view>
+            </block>
+            <block wx:elif="{{order['deliver_out']==1 && order['confirm']==0}}">
+                <view class="content-status"> 已发货，等待确认收货</view>
+            </block>
+            <block wx:elif="{{order['deliver_out']==1 && order['confirm']==1 && order['evaluate']==0}}">
+                <view class="content-status"> 已收货，待评价</view>
+            </block>
+            <block wx:else>
+                <view class="content-status"> 订单已完成</view>
+            </block>
+            <view class="content-img">
+      <image class="content-favion" src="{{img_1}}"></image>
+      <image class="content-favion" src="{{img_2}}"></image>
+            </view>
+        </view>
+        <view class="groups-list">
+            <view class="groups-list-lf">商品名称 </view>
+            <view class="groups-list-rt clr-pink">{{order['goods'][0]["name"]}}</view>
+        </view>
+        <view class="groups-list">
+            <view class="groups-list-lf">收货人 </view>
+            <view class="groups-list-rt">{{order['consignee_name']}} {{order['consignee_phone']}} </view>
+        </view>
+        <view class="groups-list">
+            <view class="groups-list-lf">收货地址 </view>
+            <view class="groups-list-rt">{{order['detail_address']}} </view>
+        </view>
+        <view class="groups-list">
+            <view class="groups-list-lf">成团时间 </view>
+            <view class="groups-list-rt">{{order['order_time']}}</view>
+        </view>
+        <view class="groups-list">
+            <view class="groups-list-lf">快递公司 </view>
+            <view class="groups-list-rt">{{order['deliver_name']}} </view>
+        </view>
+        <view class="groups-list">
+            <view class="groups-list-lf">快递单号 </view>
+            <view class="groups-list-rt">{{order['deliver_id']}} </view>
+        </view>
+    </block>
+
+                        <!--拼团失败-->
+    <block wx:if="{{order['grouped']==2}}">
+        <view class="groups-wrap">
+            <view class="groups-lf">
+                <image class="groups-img" src="{{order['goods'][0]['display_img'][0]}}"></image>
+            </view>
+            <view class="groups-rt">
+                <view class="groups-text">
+                    {{order['goods'][0]['name']}}
+                </view>
+<!--<view class="groups-attrbute">化妆品净含量:10片</view>-->
+                <view class="groups-price">
+                    <view class="groups-jg">￥{{order['goods'][0]['discount_price']}}</view>
+                    <view class="groups-yj">原价：￥{{order['goods'][0]['price']}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="grouping-content">
+            <view class="content-img">
+                <image class="content-favion" src="../../image/pintuan3.png"></image>
+                <image class="content-favion" src="../../image/pintuan6.png"></image>
+            </view>
+            <view class="groupfail-txt">
+            拼团失败了，款项将返还到您的指定银行卡~
+            </view>
+            <button class="restart" data-goods_id="{{order['goods'][0]['goods_id']}}" bindtap="re_group">再次开团</button>
+        </view>
+    </block>
+</block>
+

@@ -1,0 +1,240 @@
+/**index.wxss**/
+
+.outer_tip{
+  width: 750rpx;
+  height: 70rpx;
+  background: dodgerblue;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 40rpx;
+  color: whitesmoke;
+  position: absolute;
+  opacity: 0.7;
+}
+
+.container{margin: 0;padding:0;}
+.header{
+  width:750rpx;
+  height:160rpx;
+  background:#f65d89;
+  }
+.se_logo{
+  width:60rpx;
+  cursor:pointer;
+   display:block;
+   margin-top: 55rpx;
+   float:left;
+   }
+.se_image{
+  height:50rpx;
+  width:60rpx;
+  }
+.login_title{
+    width:95rpx;
+    height: 80px;
+    float: left;
+    font-family: '黑体';
+    margin-top:55rpx;
+    margin-left:205rpx;
+    color:#fff;
+    font-size:44rpx;
+    text-align: center;
+    margin-right: 20rpx;
+}
+.register_title{
+    width:95rpx;
+    height: 80px;
+    float: left;
+    font-family: '黑体';
+    margin-top:55rpx;
+    color:#fff;
+    font-size:44rpx;
+    text-align: center;
+    }
+.aml_input{
+  margin: 20rpx;
+  height: 50rpx;
+  width:680rpx;
+  border-radius: 10rpx;
+  border: 1px solid #ccc;
+  padding:10rpx;
+}
+.login_box{
+  height: 100%;
+  /*background: #ebebeb fixed;*/
+  padding:25rpx; 
+}
+.dl_form{
+  width: 750rpx;
+  height: 200rpx;
+  background: #fff;
+  padding-top:10rpx;
+}
+.wjmm{
+  color: #f65d89;
+  font-size: 30rpx;
+  height: 50rpx;
+  width: 200rpx;
+  margin-left: 20rpx;
+}
+.re_submit{
+  width:600rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  background: #f65d89;
+  color: #fff;
+  font-family: '黑体'
+}
+
+.aml_identify{
+  height: 50rpx;
+  margin: 20rpx;
+  float: left;
+  width:300rpx;
+  border-radius: 10rpx;
+  border: 1px solid #ccc;
+  padding:10rpx;
+}
+.get_identify{
+  margin-top:20rpx; 
+  float: left;
+  width:350rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  background: #fff;
+  color: #f65d89;
+  border: 1px solid #f65d89;
+}
+.re_submit{
+  width:600rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  background: #f65d89;
+  color: #fff;
+  font-family: '黑体'
+}
+.re_font{
+  color: #bbbbbb;
+  font-size:30rpx;
+  margin: 20rpx;
+}
+/*个人信息*/
+/**index.wxss**/
+.container{
+  margin: 0;
+  padding:0;
+}
+.lg_header{
+  width:750rpx;
+  height:250rpx;
+  background: #f65d89;
+}
+.favicon_img{
+  width: 140rpx;
+  height: 140rpx;
+  margin-left: 305rpx; 
+  margin-top:20rpx;
+  border-radius: 70rpx;
+}
+.lg_titile{
+ margin-left:280rpx;
+}
+.lg_name{
+  margin-left:320rpx;
+}
+.login_titile{
+  float: left;
+  margin-right:40rpx;
+  color: #fff;
+  font-family: '黑体'
+}
+/*登录状态内容*/
+.sta_wrp{
+  width: 750rpx;
+  height: 80rpx;
+  margin: 10rpx;
+  border-bottom: 1px solid #ccc;
+  
+}
+.sta_lf{
+  float: left;
+  width: 300rpx;
+  height:30rpx;
+  line-height: 30rpx;
+  padding:20rpx; 
+  font-size:26rpx;
+}
+.sta_rt{
+  float: right;
+}
+.sta_num{
+  color: #666666;
+  padding-top:13rpx; 
+  float: right;
+}
+.sta_img{
+  padding:20rpx; 
+  margin-right:10rpx;
+  width:40rpx;
+  height:40rpx;
+}
+/*订单分类*/
+.sta_classify{
+  width: 750rpx;
+  padding: 20rpx;
+  border-bottom: 3px solid #ccc;
+ 
+}
+.sta_classify_style{
+  width: 150rpx;
+  display: inline-block;
+  font-size: 30rpx;
+  text-align: center;
+}
+.sta_classify_img{
+  width: 100rpx;
+  height:80rpx;
+}
+
+/*图标*/
+.sta_icon{
+  float: left;
+  font-family: '黑体';
+  font-size: 30rpx;
+}
+.staicon_img{
+  width:60rpx;
+  height:60rpx;
+  margin-top:6rpx;
+  padding-left:25rpx; 
+ 
+}
+
+.lg_btn{
+  width: 375rpx;
+  height: 160rpx;
+  text-align: center;
+  float: left;
+  line-height: 160rpx;
+  font-size: 60rpx;
+  color: white;
+}
+.rg_btn{
+  width: 375rpx;
+  height: 160rpx;
+  text-align: center;
+  float: left;
+  line-height: 160rpx;
+  font-size: 60rpx;
+  color: white;
+}
+.rg_lg_btn{
+  opacity: 0.6;
+}
+
+/*分割线*/
+.tline{
+  height: 20rpx;
+  width: 750rpx;
+  background: #28cee7;
+}

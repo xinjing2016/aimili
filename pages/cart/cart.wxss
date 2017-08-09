@@ -1,0 +1,204 @@
+/**index.wxss**/
+.clr{ clear:both;}
+.lf{float:left;}
+.rf{float:right;}
+
+.container{margin: 0;padding:0;}
+.header{
+  width:750rpx;
+  height:160rpx;
+  background:#f65d89;
+  }
+.aml_title{
+    width:140rpx;
+    height: 80px;
+    float: left;
+    font-family: '黑体';
+    margin-top:55rpx;
+    margin-left: 305rpx;
+    color:#fff;
+    font-size:44rpx;}
+
+/*购物车*/
+.cart_edit{
+    float: right;
+    color: #fff;
+    margin-top: 80rpx;
+    margin-right:20rpx;
+    font-family: '黑体';
+    font-size: 30rpx;
+}
+
+.cart_wrp{
+    width:96%;
+    margin: 0 auto;
+    height:245rpx;
+    border-bottom: 1px solid #ccc;
+    
+}
+.cart_lf{
+    margin-top: 20rpx;
+    width:250rpx;
+    height:210rpx;
+    float: left;
+}
+.ca_radio{
+    width: 50rpx;
+     float: left;
+     height:210rpx;
+     line-height: 210rpx;
+     position: relative;
+     border-radius: 50%;
+}
+.cart_rt{
+    margin:10rpx; 
+    width:370rpx;
+    height:220rpx;
+    float: left;
+    position: relative;
+}
+.cart_img{
+    margin-left:20rpx;
+    width:220rpx;
+    height:200rpx;
+}
+.cart_txt{
+     font-size:30rpx;
+     margin-top:10rpx;
+     color:#0d0d0d;
+
+}
+.price_jg{
+    color:#ff2d4a;
+    font-size: 32rpx;
+    margin: 20px 0;
+}
+.price_yj{
+    text-decoration:line-through;
+    color:#666666;
+    font-size: 24rpx;
+     margin-left:10rpx;
+}
+.minus {
+    width:40rpx;
+    height:40rpx;
+    float: left;
+    margin-right:20rpx; 
+    }
+.plus{
+    width:40rpx;
+    height:40rpx;
+    float: left;
+    margin-left:20rpx; 
+}
+.cart_price{
+    /*margin-top:40rpx; */
+    float: left;
+    position: absolute;
+    bottom: 13rpx;
+}
+.cart_num{
+    /*margin-top:40rpx; */
+    float: right;
+    position: absolute;
+    bottom: 19rpx;
+    right: -10rpx;
+}
+.goods_num{
+    float: left;
+    line-height: 40rpx;
+}
+.cart_total{
+    background: white;
+    width: 750rpx;
+    height: 100rpx;
+    position: fixed;
+    bottom: 0rpx;
+    border-top:  1px solid #ccc;
+     z-index: 1000;
+}
+.cart_total_lf{
+    padding-left: 20rpx;
+    float:left;
+    width:160rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+.cart_total_rt{
+    float:left;
+    width:570rpx;
+    height: 100rpx;
+   
+}
+
+.total_price{
+     float:right;
+     width: 360rpx;
+     height: 80rpx;
+     font-size: 30rpx;
+     margin-top: 10rpx;
+     text-align: right;
+     margin-right: 20rpx;
+}
+.total_button{
+    float:right;
+    width: 190rpx;
+    height: 100rpx;
+    color:#fff;
+    background-color: #f65d89;
+    border-radius: 0rpx;
+    text-align: center;
+    line-height: 100rpx;
+    font-weight: normal;
+
+}
+.heji{
+    width: 400rpx;
+    float: right;
+    color: #f65d89;
+    font-size: 36rpx;
+}
+.discount{
+    width: 400rpx;
+    float: right;
+    font-size: 26rpx;
+    color: #a0a0a0;
+}
+.section{
+    margin-bottom: 100rpx;
+}
+/*.body{
+    height: 100%;
+    background: rgb(235,235,235);
+}*/
+checkbox{
+    /*display: none;*/
+    opacity: 0;
+    position: absolute;   
+    z-index: 999;
+
+}
+.pos_img{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top:89rpx;
+    left: 2rpx;
+    border-radius:50%;
+}
+.pos_img2{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top:30rpx;
+    
+
+    
+    /*top: 10rpx;*/
+}
+.bottom_text{
+    display: inline-block;
+    
+    text-indent: 50rpx;
+    color: rgb(135, 135, 135);
+}

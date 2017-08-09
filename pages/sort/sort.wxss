@@ -1,0 +1,141 @@
+/**index.wxss**/
+
+.groups-txt{
+  width:750rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  background: #f65d89;
+  color: #fff;
+}
+
+.groups-title{
+  float: left;
+  text-align: center;
+  width: 160rpx;
+  font-size: 38rpx;
+  font-family: '黑体';
+  margin-left:295rpx;
+}
+/*品牌*/
+.banner-classify{
+  width:750rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+ border-bottom: 1px solid #ccc;
+}
+.banner-style{
+  width: 250rpx;
+  text-align: center;
+  float: left;
+}
+.banner-select{
+  border-bottom: 3rpx solid #f65d89;
+  height: 65rpx;
+}
+.banenr-wrap{
+  width: 750rpx;
+}
+.banner-row{
+  padding-left: 20rpx;
+}
+.banner-img{
+  width: 223rpx;
+  height: 108rpx;
+  float: left;
+  margin-right: 20rpx;
+  margin-top: 30rpx;
+}
+.all-wrap{
+  display: none;
+  font-family: "黑体";
+}
+.all-wrap.active{
+  display: block;
+}
+.banner-all{
+  width: 750rpx;
+  height: 40rpx;
+  padding: 15rpx;
+  font-size: 30rpx;
+  font-family: "微软雅黑";
+  background: #f2f2f2;
+
+}
+.banner-titile{
+  width: 750rpx;
+  height: 50rpx;
+  background: #eaeaea;
+  padding-left: 20rpx;
+  color: #333;
+}
+.banner-list{
+  width: 750rpx;
+  line-height: 50rpx;
+  color: #333;
+}
+.banner-name{
+   border-bottom: 1px solid #eaeaea;
+   padding-left: 20rpx;
+   height: 50rpx;
+   width: 750rpx;
+}
+.banner-sort{
+  position: fixed;
+  right: 0;
+  top: 220rpx;
+}
+.sort-tag{
+  font-size: 30rpx;
+  color: #555;
+}
+
+/*分类*/
+.sort-goods.active{
+  display: block;
+}
+.sort-goods{
+  display: none;
+}
+.sort-wrap{
+  padding-top: 20rpx;
+}
+.sort-titile{
+  background: #f2f2f2;
+  padding: 10rpx 0 10rpx 15rpx ;
+  font-size: 30rpx;
+  font-family: "微软雅黑";
+  height:50rpx;
+  width: 750rpx;
+  clear: both;
+}
+.sort-row{
+  width: 750rpx;
+  height: 60rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+.sort-name{
+  margin-left: 30rpx;
+  text-align: center;
+  width: 208rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  float: left;
+  border: 1px solid #ccc;
+  border-radius: 5rpx;
+  color: #999999;
+  margin-bottom: 20rpx;
+}
+.nation-wrap{
+  display: none;
+  padding: 10rpx;
+}
+.nation-img{
+  width: 344rpx;
+  height: 215rpx;
+  padding: 10rpx;
+  float: left;
+}
+.active{
+  display: block;
+}

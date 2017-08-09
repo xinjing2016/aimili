@@ -1,0 +1,386 @@
+<!--index.wxml-->
+<!--头部-->
+<view class="body">
+<view class="header">
+  <view class="logo">
+    <image class="logo_img" src="../../image/logo1.png"></image>
+  </view>
+
+  <view class="input">
+    <image class="input_img"   src="../../image/searchbtn.png"></image>
+    <input bindconfirm="search" class="input_text" placeholder="搜索" type="text" />
+  </view>
+    
+  <view class="news">
+    <view class="news_img">
+      <contact-button type="default-light" size="25"></contact-button>
+    </view>
+  </view>
+</view>
+
+
+<!--推荐分类-->
+<scroll-view scroll-x="true" class="sv">
+  <view wx:for="{{tab}}" wx:for-index="key" wx:for-item="item" class="nav {{selected[key]}}"
+   data-name="{{key}}" bindtap="click">{{item}}</view>
+  <!--<view class="nav {{selected.sy}}" data-name="sy" bindtap="click">首页</view>
+  <view class="nav {{selected.xstj}}" data-name="xstj" bindtap="click">限时特价</view>
+  <view class="nav {{selected.xbtj}}" data-name="xbtj" bindtap="click">小编推荐</view>
+  <view class="nav {{selected.jrtj}}" data-name="jrtj" bindtap="click">今日特价</view>
+  <view class="nav {{selected.zxsj}}" data-name="zxsj" bindtap="click">最新上架</view>
+  <view class="nav {{selected.lsjx}}" data-name="lsjx" bindtap="click">零食精选</view>
+  <view class="nav {{selected.mmjx}}" data-name="mmjx" bindtap="click">面膜精选</view>-->
+</scroll-view>
+
+<!-- 首页 -->
+<view style="display:{{show.sy}};">
+<!--轮播图-->
+<swiper indicator-dots="true" autoplay="true" interval="4000" duration="1500">
+  <view wx:for="{{goods_lbt}}" wx:key="" wx:for-item="item">
+  <navigator url="{{item['url']}}">
+  <!--<navigator url="{{item['url']}}">-->
+    <swiper-item><image src="{{item['display_img']}}" class="swiper_img"></image></swiper-item>
+  </navigator>
+  </view>
+  <!--<navigator url="url">
+    <swiper-item><image src="../../image/banner.jpg" class="swiper_img"></image></swiper-item>
+  </navigator>
+  <navigator url="url">
+    <swiper-item><image src="../../image/banner.jpg" class="swiper_img"></image></swiper-item>
+  </navigator>
+  <navigator url="url">
+    <swiper-item><image src="../../image/banner.jpg" class="swiper_img"></image></swiper-item>
+  </navigator>
+  <navigator url="url">
+    <swiper-item><image src="../../image/banner.jpg" class="swiper_img"></image></swiper-item>
+  </navigator>-->
+</swiper>
+
+<!--分类-->
+<view class="classify">
+  <navigator url="../../pages/nation/nation"  class="classify_style">
+    <view class="classify_img_wrapper"><image src="../../image/nav_1.png" class="nav_img"></image></view>
+    国家馆
+  </navigator>
+  <navigator url="../../pages/goodsgroup/goodsgroup?key=hwjx" class="classify_style">
+    <view class="classify_img_wrapper"><image src="../../image/nav_2.png" class="nav_img"></image></view>
+    海外精选
+  </navigator>
+  <navigator url="../../pages/goodsgroup/goodsgroup?key=gnjx" class="classify_style">
+    <view class="classify_img_wrapper"><image src="../../image/nav_3.png" class="nav_img"></image></view>
+    国内精选
+  </navigator>
+  <navigator url="../../pages/goodsgroup/goodsgroup?key=qqls" class="classify_style">
+    <view class="classify_img_wrapper"><image src="../../image/nav_4.png" class="nav_img"></image></view>
+    全球零食
+  </navigator>
+  <navigator url="../../pages/goodsgroup/goodsgroup?key=xlph" class="classify_style">
+    <view class="classify_img_wrapper"><image src="../../image/nav_5.png" class="nav_img"></image></view>
+    销量排行
+  </navigator>
+  <navigator url="../../pages/sort/sort" open-type="switchTab" class="classify_style">
+    <view class="classify_img_wrapper"><image src="../../image/nav_6.png" class="nav_img"></image></view>
+    全部分类
+  </navigator>
+</view>
+
+<!--分割线-->
+<view class="line"></view>
+
+<!--推荐商品-->
+<view class="recommend">
+  <view class="t_red">
+    <image src="../../image/icon_1.png" class="recommend_img"></image>
+    <text> 店家推荐</text>   
+  </view>
+  <view class="recommend_goods">
+    <view class="first">
+      <navigator url="{{goods_djtj[0]['url']}}">
+        <image src="{{goods_djtj[0]['display_img']}}" class="first_img"></image>
+     
+
+        <view class="first_describe">
+         {{goods_djtj[0]["name"]}} 
+        </view>
+      </navigator>
+      <view class="first_price">
+        <view class="price">
+     <p class="price_ds">￥{{goods_djtj[0]["discount_price"]}}</p>
+      <!--<p class="price_re">￥{{goods_djtj[0]["discount_price"]}}</p>-->
+        </view>
+        <navigator url="url">
+          <view class="collection" data-goods_id="{{goods_djtj[0]['goods_id']}}" bindtap="collection">
+          <image src="../../image/icon_4.png" class="collection_img"></image>
+          </view>
+        </navigator>   
+      </view>
+    </view>
+    
+    <view class="other">
+      <view class="other_img_wrap">
+        <navigator url="{{goods_djtj[1]['url']}}">
+          <image src="{{goods_djtj[1]['display_img']}}" class="other_img"></image>
+        </navigator>
+      </view>
+      <view class="other_img_wrap">
+        <navigator url="{{goods_djtj[2]['url']}}">
+          <image src="{{goods_djtj[2]['display_img']}}" class="other_img"></image>
+        </navigator>
+      </view>
+      <view class="other_img_wrap">
+        <navigator url="{{goods_djtj[3]['url']}}">
+          <image src="{{goods_djtj[3]['display_img']}}" class="other_img"></image>
+        </navigator>
+      </view>
+      <view class="other_img_wrap">
+        <navigator url="{{goods_djtj[4]['url']}}">
+          <image src="{{goods_djtj[4]['display_img']}}" class="other_img"></image>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--分割线-->
+<view class="line"></view>
+
+<view class="sold_well">
+  <view class="t_red">
+    <image src="../../image/icon_2.png" class="recommend_img"></image>
+    <text> 热销产品</text> 
+  </view>
+  <view class="" wx:for="{{goods_rxcp}}" wx:for-item="item" wx:key="" >
+  <block wx:if="{{item['display_img'][3]}}">
+<view class="sold_well_goods">
+    <navigator url="{{item['url']}}">
+      <image src="{{item['display_img']}}" class="sold_well_goods_img"></image>
+      
+      </navigator>
+      </view>
+    </block>
+  </view>
+
+  <!--<view class="sold_well_goods">
+    <navigator url="url">
+      <image src="../../image/banner.jpg" class="sold_well_goods_img"></image>
+    </navigator>
+  </view>
+  <view class="sold_well_goods">
+    <navigator url="url">
+     <image src="../../image/banner.jpg" class="sold_well_goods_img"></image>
+    </navigator>
+  </view>-->
+
+</view>
+
+<!--分割线-->
+<view class="line" style="margin-top:5rpx;"></view>
+
+<view class="nessesary">
+  <view class="t_red">
+    <image src="../../image/icon_3.png" class="recommend_img"></image>
+    <text> 必买清单</text>  
+  </view>
+  <view class="two">
+    <view class="two_img">
+      <navigator url="{{goods_bmqd[0]['url']}}">
+        <image src="{{goods_bmqd[0]['display_img']}}" class="ti"></image>
+      </navigator>
+    </view>
+    <view class="two_img">
+      <navigator url="{{goods_bmqd[1]['url']}}">
+        <image src="{{goods_bmqd[1]['display_img']}}" class="ti"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class="three">
+    <view class="three_img">
+      <navigator url="{{goods_bmqd[2]['url']}}">
+        <image src="{{goods_bmqd[2]['display_img']}}" class="tri"></image>
+      </navigator>
+    </view>
+    <view class="three_img">
+      <navigator url="{{goods_bmqd[3]['url']}}">
+        <image src="{{goods_bmqd[3]['display_img']}}" class="tri"></image>
+      </navigator>
+    </view>
+    <view class="three_img">
+      <navigator url="{{goods_bmqd[4]['url']}}">
+        <image src="{{goods_bmqd[4]['display_img']}}" class="tri"></image>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<!--分割线-->
+<view class="line" style="margin-top:5rpx;"></view>
+</view>
+<!-- 首页 -->
+
+
+
+<!-- 限时特价-->
+<view style="display:{{show.xstj}}">
+<view class="recom_box">
+    <view id="recom_mid">
+      <view class="lf recom_lf" wx:for="{{goods_xstj}}" wx:for-item="item" wx:key="">
+      <navigator url="../../pages/goods/goods?goods_id={{item['goods_id']}}">
+      <image src="{{item['display_img'][0]}}"></image>
+      <view class="re_title">{{item["name"]}}</view> 
+      </navigator>
+    	    <p class="lf goods_price">¥{{item["discount_price"]}}</p>
+          <p class="s_box">两人团省¥{{(item["price"]-item["discount_price"])*2}}元</p>
+      </view>
+      
+      <!--<view class="lf recom_lf">
+      <navigator url="#">
+      <image src="../../image/picture_1.png"></image>
+      <view class="re_title">欧诗漫补水保湿面膜清洁收缩毛孔 睡眠蚕丝 深入渗透       </view> 
+      </navigator>
+    	    <p class="lf goods_price">¥39.90</p>
+          <view class="recom_arrow"></view>
+          <p class="s_box">两人团省¥49元</p>
+      </view>-->
+    </view>
+    <view style="clear:both"></view>
+</view>
+</view>
+<!-- 限时特价-->
+
+<!-- 小编推荐-->
+<view style="display:{{show.xbtj}}">
+<view class="recom_box">
+    <view id="recom_mid">
+      <view class="lf recom_lf" wx:for="{{goods_xbtj}}" wx:for-item="item" wx:key="">
+      <navigator url="../../pages/goods/goods?goods_id={{item['goods_id']}}">
+      <image src="{{item['display_img'][0]}}"></image>
+      <view class="re_title">{{item["name"]}}</view> 
+      </navigator>
+    	    <p class="lf goods_price">¥{{item["discount_price"]}}</p>
+      
+          <p class="s_box">两人团省¥{{(item["price"]-item["discount_price"])*2}}元</p>
+      </view>
+      <!--<view class="lf recom_lf">
+      <navigator url="#">
+      <image src="../../image/picture_1.png"></image>
+      <view class="re_title">欧诗漫补水保湿面膜清洁收缩毛孔 睡眠蚕丝 深入渗透       </view> 
+      </navigator>
+    	    <p class="lf goods_price">¥39.90</p>
+          <view class="recom_arrow"></view>
+          <p class="s_box">两人团省¥49元</p>
+      </view>-->     
+    </view>
+    <view style="clear:both"></view>
+</view>
+</view>
+<!-- 小编推荐-->
+
+<!-- 今日特价-->
+<view style="display:{{show.jrtj}}">
+<view class="recom_box">
+    <view id="recom_mid">
+      <view class="lf recom_lf" wx:for="{{goods_jrtj}}" wx:for-item="item" wx:key="">
+      <navigator url="../../pages/goods/goods?goods_id={{item['goods_id']}}">
+      <image src="{{item['display_img'][0]}}"></image>
+      <view class="re_title">{{item["name"]}}</view> 
+      </navigator>
+    	    <p class="lf goods_price">¥{{item["discount_price"]}}</p>
+          <p class="s_box">两人团省¥{{(item["price"]-item["discount_price"])*2}}元</p>
+      </view>
+      <!--<view class="lf recom_lf">
+      <navigator url="#">
+      <image src="../../image/picture_1.png"></image>
+      <view class="re_title">欧诗漫补水保湿面膜清洁收缩毛孔 睡眠蚕丝 深入渗透       </view> 
+      </navigator>
+    	    <p class="lf goods_price">¥39.90</p>
+          <view class="recom_arrow"></view>
+          <p class="s_box">两人团省¥49元</p>
+      </view>-->
+    </view>
+     <view style="clear:both"></view>
+</view>
+</view>
+<!-- 今日特价-->
+
+<!-- 最新上架-->
+<view style="display:{{show.zxsj}}">
+<view class="recom_box">
+    <view id="recom_mid">
+      <view class="lf recom_lf" wx:for="{{goods_zxsj}}" wx:for-item="item" wx:key="">
+      <navigator url="../../pages/goods/goods?goods_id={{item['goods_id']}}">
+      <image src="{{item['display_img'][0]}}"></image>
+      <view class="re_title">{{item["name"]}}</view> 
+      </navigator>
+    	    <p class="lf goods_price">¥{{item["discount_price"]}}</p>
+
+          <p class="s_box">两人团省¥{{(item["price"]-item["discount_price"])*2}}元</p>
+      </view>
+      <!--<view class="lf recom_lf">
+      <navigator url="#">
+      <image src="../../image/picture_1.png"></image>
+      <view class="re_title">欧诗漫补水保湿面膜清洁收缩毛孔 睡眠蚕丝 深入渗透       </view> 
+      </navigator>
+    	    <p class="lf goods_price">¥39.90</p>
+          <view class="recom_arrow"></view>
+          <p class="s_box">两人团省¥49元</p>
+      </view>-->
+    </view>
+     <view style="clear:both"></view>
+</view>
+</view>
+<!-- 最新上架-->
+
+<!-- 零食精选-->
+<view style="display:{{show.lsjx}}">
+<view class="recom_box">
+    <view id="recom_mid">
+      <view class="lf recom_lf" wx:for="{{goods_lsjx}}" wx:for-item="item" wx:key="">
+      <navigator url="../../pages/goods/goods?goods_id={{item['goods_id']}}">
+      <image src="{{item['display_img'][2]}}"></image>
+      <view class="re_title">{{item["name"]}}</view> 
+      </navigator>
+    	    <p class="lf goods_price">¥{{item["discount_price"]}}</p>
+          <p class="s_box">两人团省¥{{(item["price"]-item["discount_price"])*2}}元</p>
+      </view>
+      <!--<view class="lf recom_lf">
+      <navigator url="#">
+      <image src="../../image/picture_1.png"></image>
+      <view class="re_title">欧诗漫补水保湿面膜清洁收缩毛孔 睡眠蚕丝 深入渗透       </view> 
+      </navigator>
+    	    <p class="lf goods_price">¥39.90</p>
+          <view class="recom_arrow"></view>
+          <p class="s_box">两人团省¥49元</p>
+      </view>-->
+    </view>
+     <view style="clear:both"></view>
+</view>
+</view>
+<!-- 零食精选-->
+
+<!-- 面膜精选-->
+<view style="display:{{show.mmjx}}">
+<view class="recom_box">
+    <view id="recom_mid">
+      <view class="lf recom_lf" wx:for="{{goods_mmjx}}" wx:for-item="item" wx:key="">
+      <navigator url="../../pages/goods/goods?goods_id={{item['goods_id']}}">
+      <image src="{{item['display_img'][0]}}"></image>
+      <view class="re_title">{{item["name"]}}</view> 
+      </navigator>
+    	    <p class="lf goods_price">¥{{item["discount_price"]}}</p>
+          <p class="s_box">两人团省¥{{(item["price"]-item["discount_price"])*2}}元</p>
+      </view>
+      <!--<view class="lf recom_lf">
+      <navigator url="#">
+      <image src="../../image/picture_1.png"></image>
+      <view class="re_title">欧诗漫补水保湿面膜清洁收缩毛孔 睡眠蚕丝 深入渗透       </view> 
+      </navigator>
+    	    <p class="lf goods_price">¥39.90</p>
+          <view class="recom_arrow"></view>
+          <p class="s_box">两人团省¥49元</p>
+      </view>-->
+    </view>
+     <view style="clear:both"></view>
+</view>
+</view>
+<!-- 面膜精选-->
+</view>

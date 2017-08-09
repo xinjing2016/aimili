@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+<!--<view class="wallet-head">
+  <view class="wallet-title">我的收藏</view>
+</view>-->
+<view class="collection-border">
+  <navigator class="all-goods" url="url">
+    全部宝贝
+  </navigator>
+</view>
+
+<view class="se_box" wx:for="{{goods}}" wx:for-item="item" wx:key="">
+<!--一列-->
+      <navigator class="se_lf" url="../../pages/goods/goods?goods_id={{item['goods_id']}}">
+  <view class="se_mid">
+      <navigator class="se_lf" url="../../pages/goods/goods?goods_id={{item['goods_id']}}">
+        <image class="se_lf-image" src="{{item['display_img'][0]}}"></image>
+      </navigator>
+      <view class="se_rt">
+        <text class="se-title">
+        {{item["name"]}}
+        </text>
+          <view class="se_midp">
+            <text class="se_price">¥{{item["discount_price"]}}</text>
+            <text class="se_s">原价¥{{item["price"]}}</text>
+            <text class="se_pt se_dl">去拼团 </text>
+            <!--<text class="se_pt" data-goods_id="{{item['goods_id']}}" bindtap="delete_collection"> 删除</text>-->
+          </view>
+      </view>
+  </view>
+ <!--一列-->
+ </navigator>
+
+</view>
+</view>

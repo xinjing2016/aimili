@@ -1,0 +1,25 @@
+<!--index.wxml-->
+
+<view class="container" >
+<!--修改手机号码-->
+   <!--<view class="header">
+    <view class="se_logo">
+    <!--<navigator url="url">
+      <image class="se_image" src="../../image/se_icon.png"></image>
+    </navigator>
+    </view>
+      <view class="modify-password">修改手机号码</view>
+    </view>-->
+ <view class="myPhone" wx:if="{{phone}}">已绑定手机号:{{phone}}</view>
+<view class="forget-form">
+<form bindsubmit="send_message" bindreset="formReset">
+  <input name="phone" class="phone_identify" placeholder="输入新的手机号码" />
+  <button class="get_identify" form-type="submit">获取验证码</button>
+</form>
+<form bindsubmit="modify_phone" bindreset="formReset">
+  <input name="verify_code" class="aml_input" placeholder="请输入验证码" /> 
+  <button formType="submit" class="re_submit">立即绑定</button>
+</form>
+</view>
+
+</view>

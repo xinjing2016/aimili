@@ -1,0 +1,205 @@
+<!--index.wxml-->
+<!--<view data-hi="hello" bindtap="hi">click</view>-->
+
+<!--提示框-->
+<view class="outer_tip" style="display:{{tip_display}}">{{tip_text}}</view>
+
+
+
+<view style="display:{{model.login_register}};">
+<!--登录-->
+  <view class="header">
+    <view class="lg_btn {{class.login}}" data-name="login" bindtap="click">登录</view>
+    <view class="rg_btn {{class.register}}" data-name="register" bindtap="click">注册</view>
+  </view>
+
+ 
+<view style="display:{{model.login}};">
+  <form bindsubmit="login" bindreset="formReset">
+  <view class="dl_form">
+  <input name="account" type="text" class="aml_input" placeholder="输入手机号码或账号" />
+  <input name="password" type="password" class="aml_input" placeholder="密码" />
+  </view>
+  <view class="login_box">
+    <view class="wjmm"><navigator url="url">忘记密码？</navigator></view>
+    <button formType="submit" class="re_submit">登录</button>
+
+  </view>
+  </form>
+  <!--分割线-->
+  <!--<view class="tline"></view>-->
+  <!--登录-->
+</view>
+
+
+<view style="display:{{model.register}};">
+<!--注册-->
+<form bindsubmit="send_verify" bindreset="formReset">
+<input name="phone" class="aml_phone" id="phone" placeholder="输入手机号码" />
+<button class="get_identify" form-type="submit">发送验证码</button>
+</form>
+<form bindsubmit="register" bindreset="formReset">
+ <input name="verify_code" class="aml_input" id="phone" placeholder="输入验证码" />
+ <input name="account" class="aml_input" placeholder="账号" />
+ <input name="nickname" class="aml_input" placeholder="昵称" />
+ <input name="password" class="aml_input" placeholder="密码（6-18位）" />
+ <input name="repassword" class="aml_input" placeholder="确认密码" />
+ <view class="re_font">验证手机号，点击提交立即登录</view>
+    <button formType="submit" class="re_submit">提交</button>
+</form>
+<!--分割线-->
+<!--<view class="tline"></view>-->
+<!--注册-->
+</view>
+
+</view>
+
+
+
+<view style="display:{{model.info}};">
+<!--个人信息-->
+  <view class="lg_header">
+    <view class="favicon">
+
+    <image class="favicon_img" src="{{img}}"></image>
+    </view>
+    <view class="lg_name">
+    <view class="login_titile" url="url">{{nickName}}</view>
+    </view>
+  </view>
+
+  <view class="lgstatus_box">
+
+    <view class="sta_wrp">
+    <navigator url="url">
+      <view class="sta_lf">我的订单 </view>
+      <view class="sta_rt"><image class="sta_img" src="../../image/login_status_07.png"></image></view>
+    </navigator>
+    </view>
+<!--订单分类-->
+<view class="sta_classify">
+  <navigator url="url" class="sta_classify_style">
+    <view class="sta_img_wrap"><image src="../../image/login_status_11.png" class="sta_classify_img"></image></view>
+    待付款
+  </navigator>
+  <navigator url="url" class="sta_classify_style">
+    <view class="sta_img_wrap"><image src="../../image/login_status_13.png" class="sta_classify_img"></image></view>
+    待成团
+  </navigator>
+  <navigator url="url" class="sta_classify_style">
+    <view class="sta_img_wrap"><image src="../../image/login_status_15.png" class="sta_classify_img"></image></view>
+    待发货
+  </navigator>
+  <navigator url="url" class="sta_classify_style">
+    <view class="sta_img_wrap"><image src="../../image/login_status_17.png" class="sta_classify_img"></image></view>
+    待收货
+  </navigator>
+  <navigator url="url" class="sta_classify_style">
+    <view class="sta_img_wrap"><image src="../../image/login_status_19.png" class="sta_classify_img"></image></view>
+    待评价
+  </navigator>
+</view>
+
+
+
+<!--个人信息列表-->
+   <view class="sta_wrp">
+    <navigator url="url">
+    <icon class="sta_icon">
+    <image class="staicon_img"  src="../../image/login_status_27.png"></image>
+    </icon>
+      <view class="sta_lf">我的收藏 </view>
+      <view class="sta_rt"><image class="sta_img" src="../../image/login_status_07.png"></image></view>
+    </navigator>
+    </view>
+
+    <view class="sta_wrp">
+    <navigator url="url">
+    <icon class="sta_icon">
+    <image class="staicon_img"  src="../../image/login_status_31.png"></image>
+    </icon>
+      <view class="sta_lf">收货地址 </view>
+      <view class="sta_rt"><image class="sta_img" src="../../image/login_status_07.png"></image></view>
+    </navigator>
+    </view>
+    <view class="sta_wrp">
+    <navigator url="url">
+    <icon class="sta_icon">
+    <image class="staicon_img"  src="../../image/login_status_35.png"></image>
+    </icon>
+      <view class="sta_lf">余额 </view>
+      <view class="sta_rt"><image class="sta_img" src="../../image/login_status_07.png"></image></view>
+      <view class="sta_num">68.88</view>
+    </navigator>
+    </view>
+    <view class="sta_wrp">
+    <navigator url="url">
+    <icon class="sta_icon">
+    <image class="staicon_img"  src="../../image/login_status_38.png"></image>
+    </icon>
+      <view class="sta_lf">优惠劵 </view>
+      <view class="sta_rt"><image class="sta_img" src="../../image/login_status_07.png"></image></view>
+    </navigator>
+    </view>
+    <view class="sta_wrp">
+    <navigator url="url">
+    <icon class="sta_icon">
+    <image class="staicon_img"  src="../../image/login_status_41.png"></image>
+    </icon>
+      <view class="sta_lf">修改手机号 </view>
+      <view class="sta_rt"><image class="sta_img" src="../../image/login_status_07.png"></image></view>
+    </navigator>
+    </view>
+    <view class="sta_wrp">
+    <navigator url="url">
+    <icon class="sta_icon">
+    <image class="staicon_img"  src="../../image/login_status_44.png"></image>
+    </icon>
+      <view class="sta_lf">修改登陆密码 </view>
+      <view class="sta_rt"><image class="sta_img" src="../../image/login_status_07.png"></image></view>
+    </navigator>
+    </view>
+    <view class="sta_wrp">
+    <navigator url="url">
+    <icon class="sta_icon">
+    <image class="staicon_img"  src="../../image/login_status_48.png"></image>
+    </icon>
+      <view class="sta_lf">客服热线 </view>
+      <view class="sta_rt">
+      <image class="sta_img"
+      src="../../image/login_status_07.png"></image></view>
+      <view class="sta_num">400-080-0168</view>
+    </navigator>
+    </view>
+    <view class="sta_wrp">
+    <navigator url="url">
+    <icon class="sta_icon">
+    <image class="staicon_img"  src="../../image/login_status_51.png"></image>
+    </icon>
+      <view class="sta_lf">关于我们 </view>
+      <view class="sta_rt"><image class="sta_img" src="../../image/login_status_07.png"></image></view>
+    </navigator>
+    </view>
+    <view class="sta_wrp">
+    <navigator url="url">
+    <icon class="sta_icon">
+    <image class="staicon_img"  src="../../image/login_status_54.png"></image>
+    </icon>
+      <view class="sta_lf">用户反馈 </view>
+      <view class="sta_rt"><image class="sta_img" src="../../image/login_status_07.png"></image></view>
+    </navigator>
+    </view>
+    <view class="sta_wrp">
+
+    <view bindtap="un_login">
+    <icon class="sta_icon">
+    <image class="staicon_img"  src="../../image/login_status_58.png"></image>
+    </icon>
+      <view class="sta_lf">退出登录 </view>
+      <view class="sta_rt"><image class="sta_img" src="../../image/login_status_07.png"></image></view>
+    </view>
+    </view>
+  </view>
+</view>
+
+

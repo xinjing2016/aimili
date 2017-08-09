@@ -1,0 +1,95 @@
+<!--index.wxml-->
+<view class="groups-txt">
+<view class="groups-title">分类</view>
+</view>
+<!--分类导航-->
+<view class="banner-classify">
+  <navigator url="../sort/sort" class="banner-style">
+    类目
+  </navigator>
+  <navigator url="../banner/banner" class="banner-style banner-select">
+    品牌
+  </navigator>
+</view>
+
+<!--品牌logo-->
+<view class="banenr-wrap">
+<view><!--循环开始-->
+
+    <view class="banner-row">
+        <navigator url="url">
+        <image class="banner-img" src="../../image/banner_03.png"></image>
+        </navigator>
+        <navigator url="url">
+        <image class="banner-img" src="../../image/banner_06.png"></image>
+        </navigator>
+        <navigator url="url">
+        <image class="banner-img" src="../../image/banner_08.png"></image>
+        </navigator>
+    </view>
+</view><!--循环结束-->
+    <view class="banner-row">
+        <image class="banner-img" src="../../image/banner_14.png"></image>
+        <image class="banner-img" src="../../image/banner_16.png"></image>
+        <image class="banner-img" src="../../image/banner_18.png"></image>
+    </view>
+    <view class="banner-row">
+        <image class="banner-img" src="../../image/banner_24.png"></image>
+        <image class="banner-img" src="../../image/banner_26.png"></image>
+        <image class="banner-img" src="../../image/banner_27.png"></image>
+    </view>
+    <view class="banner-row">
+        <image class="banner-img" src="../../image/banner_31.png"></image>
+        <image class="banner-img" src="../../image/banner_32.png"></image>
+        <image class="banner-img" src="../../image/banner_33.png"></image>
+    </view>
+    <view class="banner-row">
+        <image class="banner-img" src="../../image/banner_38.png"></image>
+        <image class="banner-img" src="../../image/banner_40.png"></image>
+        <image class="banner-img" src="../../image/banner_41.png"></image>
+    </view>
+
+</view>
+<!--全部品牌-->
+    <view class="all-wrap">
+        <view class="banner-all">
+            全部品牌
+        </view>
+        <view><!--循环开始-->
+            <view class="banner-titile">
+                A
+            </view>
+            <view class="banner-list">
+            <navigator class="banner-name" url="url">A.by Boy</navigator>
+            <navigator class="banner-name" url="url">ABOUT ME</navigator>
+            <navigator class="banner-name" url="url">ABOUT ME</navigator>
+            </view>
+        </view><!--循环结束-->
+            <view class="banner-titile">
+                B
+            </view>
+            <view class="banner-list">
+            <navigator class="banner-name" url="url">BOH</navigator>
+            <navigator class="banner-name" url="url">ABOUT ME</navigator>
+            </view>
+            <view class="banner-titile">
+                C
+            </view>
+            <view class="banner-list">
+            <navigator class="banner-name" url="url">BOH</navigator>
+            <navigator class="banner-name" url="url">ABOUT ME</navigator>
+            </view>
+            <view class="banner-titile">
+                D
+            </view>
+            <view class="banner-list">
+            <navigator class="banner-name" url="url">BOH</navigator>
+            <navigator class="banner-name" url="url">ABOUT ME</navigator>
+            </view>
+         <scroll-view class="banner-sort" scroll-y="true" style="width:24rpx;" >
+<block wx:for="{{['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '#']}}" wx:for-item="item" wx:key="">
+            <view bindtap="BannerSort" data-tag="{{item}}" class="sort-tag">{{item}}</view>
+        </block>
+</scroll-view>
+    </view>
+

@@ -1,0 +1,208 @@
+<!--index.wxml-->
+ <!--<view class="header">
+    	<text class="order_title">确认订单</text>
+ </view>-->
+
+<view class="section">
+<view class="body {{showup2}}"></view>
+<!--如果没有默认地址-->
+  <view class="order_address">
+    <view wx:if="{{selected_address=='null'}}">
+      <navigator url="../../pages/address/address" class="add-address">
+      <view class="address">添加收货地址</view>
+      </navigator>
+    </view>
+    <view wx:else>
+    <view class="all-address" hover-class="add-hover" bindtap="show_hide">
+         
+     <image class="dizhi-img" src="../../image/dizhi-jiantou.png"></image>
+     <image class="dizhi-img-right" src="../../image/row.png"></image>
+
+          <view class="accept-name"> 
+          {{selected_address["consignee_name"]}}</view> 
+          <view class="accept-phone">
+          {{selected_address["consignee_phone"]}}</view>
+          <view class="accept-address">收货地址：<text  wx:for="{{selected_address['detail']}}" wx:for-item="ite" wx:key="">{{ite}} </text></view>
+      </view>
+
+    </view>
+   
+    </view>
+
+<view class="{{more_address}}" >
+
+    <!--有默认地址-->
+    <view class="all-address" hover-class="add-hover" wx:for="{{user_address}}" wx:for-item="item" wx:key="" wx:index="index">
+    <view data-address_index="{{index}}" bindtap="select_address">
+        <view class="accept-name">{{item["consignee_name"]}}</view> 
+        <view class="accept-phone">{{item["consignee_phone"]}}</view>
+        <view class="accept-address">
+        <block wx:if="{{item['default_address']==1}}"><text style="color:#f65d89;">[默认地址]：</text></block>
+        <block wx:else></block>
+        <text wx:for="{{item['detail']}}" wx:for-item="ite" wx:key="">{{ite}} </text></view>
+    </view>
+    </view>
+
+        <navigator url="../../pages/address/address" class="add-address">
+        <button class="address-button">添加新地址</button>
+        </navigator>
+   
+</view>
+
+<view class="address_line">
+<image class="address_line_img" src="../../image/address.png"></image>
+</view>
+
+<!--订单列表信息-->
+    <view class="order_wrp" wx:for="{{order_goods}}" wx:item="item" wx:key="">
+
+      <view class="order_lf"><image class="cart_img" src="{{item['display_img'][0]}}"></image></view>
+      <view class="order_rt">
+      <view class="order_txt">
+       {{item['content']}}
+      </view>
+      <view class="goods_attribute">
+      
+      </view>
+          <view class="order_price">
+            <text class="price_jg">¥{{item["discount_price"]}}</text>
+            <text class="price_yj">原价¥{{item["price"]}}</text>
+          </view>
+          <view class="order_num">
+            <image class="order_minus" src="../../image/minus.png" data-index="{{index}}" bindtap="decrease"></image>
+            <p class="goods_num">{{item.num}}</p>
+            <image class="order_plus" src="../../image/plus.png" bindtap="increase" data-index="{{index}}"></image>
+          </view>
+      </view>
+    
+    </view>
+    
+<!--订单列表信息-->
+
+  <view class="cm_order_wrp">
+      <view class="cm_order_lf">配送方式 </view>
+      <view class="cm_order_rt">
+          <radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio express" >
+            <radio value="快递" checked=""/>快递
+            <radio value="自提" checked=""/>自提
+           </label>
+          </radio-group>
+      </view>
+  </view>
+
+  <view class="cm_order_wrp">
+    <view bindtap="couponshow2">
+        <view class="cm_order_lf">收货时间 </view>
+        <view class="cm_order_rt">
+           <view class="receiving_time">{{receiving_time}}
+        
+          <image class="cm_order_img" src="../../image/login_status_07.png"></image>
+        </view>
+        </view>
+    </view>
+    </view>
+
+    <!--收货时间-->
+    <view class="time-list {{showup2}}" >
+        <view class="sure">
+          <button class="left"  bindtap="couponshow2">取消</button>
+          <button class="right" bindtap="couponshow2">确定</button>
+        </view>
+
+         <block wx:for="{{dispatching}}" wx:for-item="item" wx:key="">
+           <view class="shijian " data-name="s1" data-receiving_time_id="{{item['id']}}"  data-receiving_time="{{item['value']}}" bindtap="click">{{item['value']}}</view>
+
+         </block>
+<!--
+        <view class="shijian {{selected.s1}}" data-name="s1"  data-receiving_time="周一至周五收货" bindtap="click">周一至周五收货</view>
+        <view class="shijian {{selected.s2}}" data-name="s2" data-receiving_time="收货时间不限" bindtap="click">收货时间不限</view>
+        <view class="shijian {{selected.s3}}"  data-name="s3" data-receiving_time="周六日/节假时间" bindtap="click">周六日/节假时间</view>
+ -->
+
+    </view>
+
+  <view class="cm_order_wrp">
+      <view class="cm_order_lf">可用余额</view>
+      <view class="cm_order_rt">
+         <p class="wechat_pay">￥{{balance}}</p>
+      </view>
+  </view>
+
+    <view class="cm_order_wrp">
+    <view bindtap="couponshow">
+        <view class="cm_order_lf">优惠券 </view>
+        <view class="cm_order_rt">
+        <image class="cm_order_img" src="../../image/login_status_07.png"></image>
+        </view>
+    </view>
+    </view>
+    <!--优惠券-->
+    <view class="coupon-list {{showup}}" >
+    <view  style="text-align:center;" wx:if="{{(coupon['user_coupon'].length)<1}}">
+            当前可使用的优惠券为空
+  </view>
+
+<view wx:else> 
+<radio-group class="radio-group" bindchange="radioChange_coupon">
+            <label class="radio" >
+            <block wx:for="{{coupon['user_coupon']}}" wx:for-item="item" wx:key="">
+              
+            <view class="goods-coupon">
+            <radio class="coupon-radio" value="{{item['coupon_id']}}" checked=""/>
+            <text class="coupon-sample">{{item["coupon_name"]}}</text>
+
+            </view>
+            </block>
+           </label>
+        </radio-group>
+</view>        
+    </view>
+<!--
+    <block wx:for="{{coupon['user_coupon']}}" wx:for-item="item" wx:key="">
+      <view class="goods-coupon">
+      <radio>{{item["coupon_name"]}}</radio>
+      </view>
+    </block>
+
+    <block wx:for="{{coupon['coupon']}}" wx:for-item="item" wx:key="">    
+      <view class="goods-coupon">
+      <radio>{{item["coupon_name"]}}</radio>
+      </view>
+    </block>
+    -->
+
+
+    <view style="clear:both;"></view>
+    <!--
+  <view class="cm_order_wrp">
+      <view class="cm_order_lf">支付方式 </view>
+      <view class="cm_order_rt">
+         <p class="wechat_pay">{{pay_type}}</p>
+      </view>
+  </view>
+  <view class="pay-way" >
+        <radio-group class="radio-group" bindchange="radioChange_pay">
+            <label class="radio express" >
+            <radio value="微信支付" checked="checked"/>微信支付
+            <radio value="余额支付" checked=""/>余额支付
+           </label>
+        </radio-group>
+  </view>
+-->
+</view>
+
+
+<view style="clear:both"></view>
+
+<!--提交订单-->
+<view class="submit_order">
+  <view class="submit_order_rt">
+   <button class="total_button" bindtap="submit_order">提交订单</button>
+    <view class="total_price">
+    <p class="heji">合计:¥{{add_price}}</p>
+    <p class="discount">已优惠:{{discount}}</p>
+    </view>
+   
+  </view>
+</view>

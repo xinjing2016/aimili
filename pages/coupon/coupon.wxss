@@ -1,0 +1,112 @@
+/**index.wxss**/
+page{
+  background: #ebebeb;
+}
+.wallet-head{
+  width: 750rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f65d89;
+  font-family: "黑体"
+}
+
+.wallet-title{
+  color: #fff;
+  margin-left: 125rpx;
+  width: 500rpx;
+  height: 40rpx;
+  float: left;
+  text-align: center;
+  font-size: 38rpx;
+}
+.coupon-nav{
+  width: 750rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #fff;
+}
+.cp-nav{
+  width: 250rpx;
+  float: left;
+  text-align: center;
+  font-size: 32rpx;
+}
+.select{
+  border-bottom:1px solid #f65d89;
+}
+.coupon-wrap{
+  clear: both;
+  width: 750rpx;
+  text-align: center;
+}
+.coupon-logo{
+  width: 140rpx;
+  height: 90rpx;
+  margin-top: 150rpx;
+}
+.coupon-text{
+  padding-top: 20rpx;
+  font-size: 32rpx;
+  color: #666;
+}
+.coupon-img{
+  text-align: left;
+  
+}
+
+
+.block{
+  display: block;
+}
+.none{
+  display: none;
+}
+.coupon-list{
+  width: 690rpx;
+  background: #fff;
+  padding: 20rpx;
+  margin: 15rpx 15rpx;
+  clear: both;
+ height: 130rpx;
+}
+.coupon-lf{
+  width: 200rpx;
+  height: 150rpx;
+  float: left;
+  line-height: 150rpx;
+  padding:5rpx;
+  background-color:#f65d89;
+  font-weight:bold;
+  font-size: 45rpx;
+  color:#fff;
+  margin:-16rpx 0 0 -17rpx;
+  text-align: center;
+}
+.coupon_logo{position: absolute;width: 60rpx;height: 60rpx;right: 30rpx;top:5rpx;}
+.outdate{background:#aaaaaa;}
+.dollar{font-size: 35rpx;}
+.coupon_wp{position: relative;}
+.coupon-rt{margin-left: 10rpx;float: left;width:482rpx;
+}
+.coupon-img{
+  width: 70rpx;
+  height: 60rpx;
+
+}
+.coupon-name{
+  font-family: '微软雅黑';
+  width:500rpx;
+  display: block;
+  font-size: 32rpx;
+
+}
+.coupon-time{
+  color: #666;
+  font-size: 30rpx;
+}
+.coupon-used{
+  width: 30rpx;
+  color: #999;
+  border: 1px solid #999;
+  float: left;
+}

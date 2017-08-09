@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<!--拼团差一人-->
+<view style="clear:both;width:750rpx;height:10rpx;background:red"></view>
+<!--分割线-->
+<view class="groups-wrap">
+    <view class="groups-lf">
+        <image class="groups-img" src="../../image/pintuan1.png"></image>
+    </view>
+    <view class="groups-rt">
+            <view class="groups-text">欧诗漫补水保湿玻尿酸面膜贴女冬清洁收
+            缩毛孔免洗非海藻睡眠蚕丝 深入渗透 </view>
+            <view class="groups-attrbute">
+            化妆品净含量:10片
+            </view>
+            <view class="groups-price">
+                <view class="groups-jg">￥39.00</view>
+                <view class="groups-yj">原价：￥88</view>
+            </view>
+    </view>
+</view>
+
+<view class="grouping-content">
+    <!--<view class="content-txt content-text">-->
+        <!--<image class="content-ye" src="../../image/pintuan2.png"></image>拼团中，还差一个人，快去邀请好友吧~-->
+    <!--</view>   -->
+    <view class="content-img">
+    <image class="grouping-favion" src="../../image/pintuan3.png"></image>
+    <image class="grouping-favion" src="../../image/pintuan6.png"></image>
+    </view>
+    <view class="content-status">仅剩<text>1</text>个名额</view>
+    <view class="countdown">
+         剩余:<text class="countdown1"> {{clock}}</text>  
+            <text >{{micro_second}}</text>结束      
+    </view>
+    
+    
+    <view class="button1">一键参团</view> 
+    <!--<button class="restart">一键参团</button>-->
+    
+    
+</view>
+

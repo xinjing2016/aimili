@@ -1,0 +1,83 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/forget/forget",
+    "pages/cart/cart",
+    "pages/user/user",
+    "pages/about/about",
+    "pages/scan/scan",
+    "pages/nation/nation",
+    "pages/nation_goods/nation_goods",
+    "pages/search/search",
+    "pages/classify/classify",
+    "pages/confirm_order/confirm_order",
+    "pages/confirm_order_group/confirm_order_group",
+    "pages/modifyphone/modifyphone",
+    "pages/modifypwd/modifypwd",
+    "pages/orderdetail/orderdetail",
+    "pages/address/address",
+    "pages/orderlist/orderlist",
+    "pages/banner/banner",
+    "pages/coupon/coupon",
+    "pages/feedback/feedback",
+    "pages/wallet/wallet",
+    "pages/groupfail/groupfail",
+    "pages/grouping/grouping",
+    "pages/groups/groups",
+    "pages/sort/sort",
+    "pages/goods/goods",
+    "pages/goodsgroup/goodsgroup",
+    "pages/collection/collection",
+    "pages/goodslist/goodslist",
+    "pages/comment/comment",
+    "pages/goods_list/goods_list",
+    "pages/wait_goods/wait_goods",
+    "pages/wait_goods_buy/wait_goods_buy",
+    "pages/top_up/top_up",
+    "pages/enchashment/enchashment",
+    "pages/resort/resort",
+    "pages/orderdetail_tuan/orderdetail_tuan"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"#3366FF",
+    "navigationBarBackgroundColor": "#f65d89",
+    "navigationBarTitleText": "  ",
+    "navigationBarTextStyle":"",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "#f65d89",
+    "backgroundColor": "#FBFBFB",
+    "borderStyle": "white",
+    "list":[{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "tabbar/home.png",
+      "selectedIconPath": "tabbar/home_1.png"
+      
+    },{
+      "pagePath": "pages/sort/sort",
+      "text": "分类",
+      "iconPath": "tabbar/classify.png",
+      "selectedIconPath": "tabbar/classify_1.png"
+    },{
+      "pagePath": "pages/scan/scan",
+      "text": "扫一扫",
+      "iconPath": "tabbar/code.png",
+      "selectedIconPath": "tabbar/code_1.png"
+    },{
+      "pagePath": "pages/cart/cart",
+      "text": "购物车",
+      "iconPath": "tabbar/car.png",
+      "selectedIconPath": "tabbar/car_1.png"
+    },{
+      "pagePath": "pages/user/user",
+      "text": "个人中心",
+      "iconPath": "tabbar/my.png",
+      "selectedIconPath": "tabbar/my_1.png"
+    }]
+  }
+}

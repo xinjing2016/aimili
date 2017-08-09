@@ -1,0 +1,176 @@
+<!--index.wxml-->
+<view class="container">
+ <view class="header">
+    <view>
+    	<text class="order_title">我的订单</text>
+    </view>
+ </view>
+
+<view class="myorder-nav">
+  <navigator url="url" class="order-nav selected">全部</navigator>
+  <navigator url="../../pages/orderdetail/index" class="order-nav">待付款</navigator>
+  <navigator url="../../pages/unpay/index" class="order-nav">待成团</navigator>
+  <navigator url="../../pages/address/index" class="order-nav">待发货</navigator>
+  <navigator url="url" class="order-nav">待收货</navigator>
+  <navigator url="url" class="order-nav">待评价</navigator>
+</view>
+
+<view><!--循环开始-->
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+    <view class="myorder-shop">欧诗漫</view>
+    <view class="myorder-status">待支付</view>
+    </view>
+    <view class="myorder-list2">
+    <view class="myorder-img"><image class="goods-img" src="../../image/goods_03.png"></image></view>
+    <view class="myorder-text">薇诺娜 细致毛孔面膜6贴 保湿控油面膜
+    收毛孔 男女毛孔护理补水
+    <view class="goods-attribute">化妆品净含量：10片</view>
+    </view>
+    <view class="myorder-price">
+    <view class="goods-price">￥39.00</view>
+    <view class="goods-quantity">x1</view>
+    </view>
+    </view>
+    <view class="myorder-list3">
+    <view class="myorder-total">共一件商品 合计：39.00</view>
+    </view>
+    <view class="myorder-list4">
+    <view class="myorder-edit">
+    <button class="go-pay" bindtap="primary">去支付</button>
+    <button class="cancel-order" bindtap="primary">取消订单</button>
+    </view>
+    </view>
+</view>
+</view><!--循环结束-->
+<!--待发货-->
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+    <view class="myorder-shop">欧诗漫</view>
+    <view class="myorder-status">已成团，待发货</view>
+    </view>
+    <view class="myorder-list2">
+    <view class="myorder-img"><image class="goods-img" src="../../image/goods_03.png"></image></view>
+    <view class="myorder-text">薇诺娜 细致毛孔面膜6贴 保湿控油面膜
+    收毛孔 男女毛孔护理补水
+    <view class="goods-attribute">化妆品净含量：10片</view>
+    </view>
+    <view class="myorder-price">
+    <view class="goods-price">￥39.00</view>
+    <view class="goods-quantity">x1</view>
+    </view>
+    </view>
+    <view class="myorder-list3">
+    <view class="myorder-total">共一件商品 合计：39.00</view>
+    </view>
+    <view class="myorder-list4">
+    <view class="myorder-edit">
+    <button class="go-pay" bindtap="primary">确认收货</button>
+    </view>
+    </view>
+</view>
+<!--已发货-->
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+    <view class="myorder-shop">欧诗漫</view>
+    <view class="myorder-status">卖家已发货</view>
+    </view>
+    <view class="myorder-list2">
+    <view class="myorder-img"><image class="goods-img" src="../../image/goods_03.png"></image></view>
+    <view class="myorder-text">薇诺娜 细致毛孔面膜6贴 保湿控油面膜
+    收毛孔 男女毛孔护理补水
+    <view class="goods-attribute">化妆品净含量：10片</view>
+    </view>
+    <view class="myorder-price">
+    <view class="goods-price">￥39.00</view>
+    <view class="goods-quantity">x1</view>
+    </view>
+    </view>
+    <view class="myorder-list3">
+    <view class="myorder-total">共一件商品 合计：39.00</view>
+    </view>
+    <view class="myorder-list4">
+    <view class="myorder-edit">
+    <button class="go-pay" bindtap="primary">确认收货</button>
+    </view>
+    </view>
+</view>
+<!--交易成功-->
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+    <view class="myorder-shop">欧诗漫</view>
+    <view class="myorder-status">交易成功</view>
+    </view>
+    <view class="myorder-list2">
+    <view class="myorder-img"><image class="goods-img" src="../../image/goods_03.png"></image></view>
+    <view class="myorder-text">薇诺娜 细致毛孔面膜6贴 保湿控油面膜
+    收毛孔 男女毛孔护理补水
+    <view class="goods-attribute">化妆品净含量：10片</view>
+    </view>
+    <view class="myorder-price">
+    <view class="goods-price">￥39.00</view>
+    <view class="goods-quantity">x1</view>
+    </view>
+    </view>
+    <view class="myorder-list3">
+    <view class="myorder-total">共一件商品 合计：39.00</view>
+    </view>
+    <view class="myorder-list4">
+    <view class="myorder-edit">
+    <button class="go-pay" bindtap="primary">查看评价</button>
+    </view>
+    </view>
+</view>
+<!--交易取消-->
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+    <view class="myorder-shop">欧诗漫</view>
+    <view class="myorder-status">交易取消</view>
+    </view>
+    <view class="myorder-list2">
+    <view class="myorder-img"><image class="goods-img" src="../../image/goods_03.png"></image></view>
+    <view class="myorder-text">薇诺娜 细致毛孔面膜6贴 保湿控油面膜
+    收毛孔 男女毛孔护理补水
+    <view class="goods-attribute">化妆品净含量：10片</view>
+    </view>
+    <view class="myorder-price">
+    <view class="goods-price">￥39.00</view>
+    <view class="goods-quantity">x1</view>
+    </view>
+    </view>
+    <view class="myorder-list3">
+    <view class="myorder-total">共一件商品 合计：39.00</view>
+    </view>
+    <view class="myorder-list4">
+    <view class="myorder-edit">
+    <button class="go-pay" bindtap="primary">删除订单</button>
+    </view>
+    </view>
+</view>
+<!--拼团-->
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+    <view class="myorder-shop">欧诗漫</view>
+    <view class="myorder-status">拼团中，差一人</view>
+    </view>
+    <view class="myorder-list2">
+    <view class="myorder-img"><image class="goods-img" src="../../image/goods_03.png"></image></view>
+    <view class="myorder-text">薇诺娜 细致毛孔面膜6贴 保湿控油面膜
+    收毛孔 男女毛孔护理补水
+    <view class="goods-attribute">化妆品净含量：10片</view>
+    </view>
+    <view class="myorder-price">
+    <view class="goods-price">￥39.00</view>
+    <view class="goods-quantity">x1</view>
+    </view>
+    </view>
+    <view class="myorder-list3">
+    <view class="myorder-total">共一件商品 合计：39.00</view>
+    </view>
+    <view class="myorder-list4">
+    <view class="myorder-edit">
+    <button class="invite-friend" bindtap="primary">邀请好友参加</button>
+    </view>
+    </view>
+</view>
+</view>

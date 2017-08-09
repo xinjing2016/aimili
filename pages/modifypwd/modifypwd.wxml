@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<!--修改登录密码-->
+   <!--<view class="header">
+      <view class="se_logo">
+   
+      </view>
+      <view class="modify-password">修改登录密码</view>
+    </view>-->
+<form bindsubmit="modify_password" bindreset="formReset">
+ <view class="forget-form">
+  <input name="password" class="aml_input" placeholder="原密码" />
+  <input name="new_password" class="aml_input" placeholder="新密码（6-18位）"/>
+  <input name="re_new_password" class="aml_input" placeholder="确认一遍新密码" />
+  </view>
+  <button formType="submit" class="re_submit">保存</button>
+ 
+</form>
+

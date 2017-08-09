@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<!--关于我们-->
+<!--<view class="about-head">
+  <view class="about-title">关于我们</view>
+</view>-->
+
+<view class="about-wrap">
+  <view>
+  <image class="about-logo" src="../../image/logo.png"></image>
+  </view>
+  <view class="about-text">
+    {{about}}
+  </view>
+</view>

@@ -1,0 +1,73 @@
+<!--index.wxml-->
+<!--优惠劵-->
+<!--<view class="wallet-head">
+  <view class="wallet-title">我的优惠劵</view>
+</view>-->
+
+<view class="coupon-nav">
+  <view data-index="1" bindtap="click" class="cp-nav {{select_normal}}" >未使用</view>
+  <view data-index="2" bindtap="click" class="cp-nav {{select_used}}" >已使用</view>
+  <view data-index="3" bindtap="click" class="cp-nav {{select_expired}}" >已过期</view>
+</view>
+<view style="clear:both"></view>
+<view class="{{normal_view}}">
+<view wx:for="{{normal}}" wx:for-item="item" wx:key="">
+<view class="coupon-list">
+  <view class="coupon-lf">
+   ￥{{item["coupon_price"]}}
+<!--
+  <image  class="coupon-img" src="https://www.gaoliuxu.com/Public/Icon/coupon1.png"></image>
+  -->
+  </view>
+  <view class="coupon-rt">
+  <p class="coupon-name">{{item["coupon_name"]}}(满{{item['reach_price']}}元可使用)</p>
+
+  <p class="coupon-time">有效期：{{item['start_time']}}～{{item["end_time"]}}</p>
+  </view>
+</view>
+</view>
+</view>
+
+<view class="{{used_view}} ">
+<view wx:for="{{used}}" wx:for-item="item" wx:key="" class="coupon_wp">
+<image src="../../image/youhuiquan_03_03.jpg" class="coupon_logo" />
+<view class="coupon-list">
+  <view class="coupon-lf">
+  <!--
+  <image  class="coupon-img" src="https://www.gaoliuxu.com/Public/Icon/coupon1.png"></image>
+  -->
+  <text class="dollar">￥</text>{{item["coupon_price"]}}
+  </view>
+  <view class="coupon-rt">
+  <p class="coupon-name">{{item["coupon_name"]}}(满{{item['reach_price']}}元可使用)</p>
+  
+  <p class="coupon-time">有效期：{{item['start_time']}}～{{item["end_time"]}}</p>
+  </view>
+</view>
+</view>
+</view>
+
+<view class="{{expired_view}}">
+<view wx:for="{{expired}}" wx:for-item="item" wx:key="" class="coupon_wp">
+<image src="../../image/youhuiquan_03.jpg" class="coupon_logo" />
+<view class="coupon-list">
+  <view class="coupon-lf outdate">
+  <!--
+  <image  class="coupon-img" src="https://www.gaoliuxu.com/Public/Icon/coupon1.png"></image>
+  -->
+  <text class="dollar">￥</text>{{item["coupon_price"]}}
+  </view>
+  <view class="coupon-rt">
+  <p class="coupon-name">{{item["coupon_name"]}}(满{{item['reach_price']}}元可使用)</p>
+  <p class="coupon-time">有效期：{{item['start_time']}}～{{item["end_time"]}}</p>
+  </view>
+</view>
+</view>
+</view>
+
+<!--<view class="coupon-wrap">
+  <image class="coupon-logo" src="../../image/coupon.png"></image>
+  <view class="coupon-text">
+    还没有券哦 ~
+  </view>
+</view>-->

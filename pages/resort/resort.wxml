@@ -1,0 +1,15 @@
+<!--pages/resort/resort.wxml-->
+<view class="header">
+    <text>时间</text>
+    <text>元</text>
+    <text class="bordernone">状态</text>    
+</view>
+<view wx:for="{{list}}" wx:for-item="item">
+    <view class="lis">
+        <text>{{item.oprate_time}}</text>
+        <text>{{item.amount}}</text>
+        <text class="{{item.class}}">{{item.state_str}}</text>    
+    </view>
+</view>
+
+

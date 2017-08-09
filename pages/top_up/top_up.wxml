@@ -1,0 +1,28 @@
+<view style="display:block;">
+
+<view style="display:{{model.login}};">
+  <form bindsubmit="top_up" bindreset="formReset">
+
+  <radio-group class="radio-group" bindchange="select_balance">
+   <label class="radio" >
+      <block wx:for="{{items}}" wx:for-item="item" wx:key="">
+        <view class="goods-coupon">
+          <radio class="coupon-radio" value="{{item.value}}" checked="{{item.checked}}"/>
+           <text class="coupon-sample">{{item.name}}</text>
+         </view>
+      </block>
+ </label>
+</radio-group>
+ 
+  <view class="login_box"> 
+    <button formType="submit" class="re_submit">去充值</button>
+     </view>
+  </form>
+
+</view>
+
+
+
+</view>
+
+

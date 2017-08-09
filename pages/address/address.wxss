@@ -1,0 +1,212 @@
+/**index.wxss**/
+page{
+  background:#ebebeb;
+}
+.container{margin: 0;padding:0;}
+.orderdetail-txt{
+  width:750rpx;
+  height:70rpx;
+  background: #fff;
+  border-bottom:  1px solid #ccc;
+  line-height: 70rpx;
+}
+
+.orderdetail-title{
+  float: left;
+  text-align: center;
+  width: 160rpx;
+  font-size: 38rpx;
+  font-family: '黑体';
+  margin-left:295rpx;
+}
+
+/*收货地址*/
+.accept-address{
+  border-bottom: 20rpx solid #ebebeb;
+}
+.address-xx{
+  background: #fff;
+  font-size: 26rpx;
+  width: 700rpx;
+  height: 70rpx;
+  padding:30rpx;
+  border-bottom:  1px solid #ccc;
+}
+.user-name{
+  width: 750rpx;
+  height: 20rpx;
+  margin-bottom: 20rpx;
+}
+.address-edit{
+  width: 750rpx;
+  height: 80rpx;
+  background: #fff;
+  line-height: 80rpx;
+}
+.adedit-lf{
+  width: 510rpx;
+  float:left;
+  font-size: 26rpx;
+  padding-left:20rpx;
+}
+.adedit-rt{
+  width: 220rpx;
+  float: right;
+  font-size: 26rpx;
+}
+.adedit-img{
+  width: 30rpx;
+  height: 40rpx;
+  margin-top: 17rpx;
+  margin-right: 8rpx;
+  float: left;
+}
+
+.default-img{
+  width: 50rpx;
+  height: 40rpx;
+  float: left;
+  margin-top: 20rpx;
+  margin-right: 18rpx;
+}
+.default-nav{
+  width:180rpx;
+  color: #f65d89;
+}
+.set-default-nav
+{
+  width:180rpx;
+  color: #999;
+}
+.default-nav1{
+  background: #fff;
+  color: #666;
+}
+.edit-nav{
+  float: left;
+}
+.edit-text{
+  float: left;
+  margin-right: 20rpx;
+  color: #999;
+}
+
+.add-address{
+  width: 750rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: absolute;
+  bottom: 20rpx;
+}
+.addaddress-button{
+  background: #f65d89;
+  color: #fff;
+  width: 600rpx;
+  text-align: center;
+  padding-left: 200rpx;
+}
+.addaddress-img{
+  width: 50rpx;
+  height:50rpx;
+  margin-top: 15rpx;
+  float: left;
+}
+.addaddress-text{
+  font-size: 32rpx;
+  text-align: center;
+  width: 160rpx;
+  float: left;
+}
+.detail{
+  display: inline;
+}
+.add_address{
+  background: #fff;
+  width: 750rpx;
+  height: 620rpx;
+}
+.in_st{
+  width: 5rpx;
+  height: 200rpx;
+  background: black;
+}
+.address-title{
+  width: 750rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #f65d89;
+  color: #fff;
+}
+.address-cancel{
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+  padding-right: 30rpx;
+  margin-top: 20rpx;
+}
+.address-cl{
+  line-height: 60rpx;
+  text-align: center;
+}
+.add-row{
+  width:750rpx;
+  margin-top: 30rpx;
+}
+
+.address-input2{
+   border-radius: 6rpx;
+   font-size: 34rpx;
+   width: 650rpx;
+   border: 1px solid #ebebeb;
+   padding-left: 30rpx;
+   margin-top:10rpx;
+   margin-left: 35rpx;
+   height: 60rpx;
+}
+.address-pick{
+  text-align: center;
+  width: 750rpx;
+  height:220rpx;
+  font-size: 36rpx;
+  clear: both;
+}
+.address-submit{
+  width: 680rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #f65d89;
+  color: #fff;
+  margin-top: 60rpx;
+  
+}
+.new-address{
+  margin-left: 275rpx;
+  float: left;
+  width: 200rpx;
+  text-align: 200rpx;
+
+}
+.add-selected{
+  font-size: 30rpx;
+  float: left;
+  padding-left:30rpx;
+  font-family: "微软雅黑";
+  margin-right: 20rpx;
+}
+.address-selected{
+  float: left;
+  color: #999;
+  font-size: 30rpx;
+  margin-right: 10rpx;
+  font-family: "微软雅黑";
+}
+.selected-row{
+  width: 680rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1px solid #ebebeb;
+  margin-left: 35rpx;
+  
+  color: #999;
+}

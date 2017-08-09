@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="container">
+<view class="groups-txt">
+<view class="groups-title">拼团详情</view>
+</view>
+
+<!--拼团-->
+<view class="groups-wrap">
+    <view class="groups-lf">
+        <image class="groups-img" src="../../image/pintuan1.png"></image>
+    </view>
+    <view class="groups-rt">
+        <view class="groups-text">欧诗漫补水保湿玻尿酸面膜贴女冬清洁收
+缩毛孔免洗非海藻睡眠蚕丝 深入渗透 </view>
+        <view class="groups-attrbute">
+        化妆品净含量:10片
+        </view>
+        <view class="groups-price">
+        <view class="groups-jg">￥39.00</view>
+        <view class="groups-yj">原价：￥88</view>
+        </view>
+    </view>
+</view>
+
+<view class="groups-content">
+    <view class="content-txt">
+    <view class="content-text">
+    <image class="content-ye" src="../../image/pintuan2.png"></image>
+     拼团成功啦，可以再去逛逛哦~</view>
+    </view>
+    <view class="content-status"> 商家正在努力发货中</view>
+    <view class="content-img">
+    <image class="content-favion" src="../../image/pintuan3.png"></image>
+    <image class="content-favion" src="../../image/pintuan4.png"></image>
+    </view>
+</view>
+
+<view class="groups-list">
+    <view class="groups-list-lf">商品名称 </view>
+    <view class="groups-list-rt clr-pink">欧诗漫补水保湿面膜 </view>
+</view>
+<view class="groups-list">
+    <view class="groups-list-lf">收货人 </view>
+    <view class="groups-list-rt">姚美丽 13700006688 </view>
+</view>
+<view class="groups-list">
+    <view class="groups-list-lf">收货地址 </view>
+    <view class="groups-list-rt">广东广州天河区科韵路棠安... </view>
+</view>
+<view class="groups-list">
+    <view class="groups-list-lf">成团时间 </view>
+    <view class="groups-list-rt">2017-02-27 18:02 </view>
+</view>
+</view>

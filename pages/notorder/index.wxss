@@ -1,0 +1,180 @@
+/**index.wxss**/
+page{
+      background:#ebebeb;
+}
+.container{margin: 0;padding:0;}
+.header{
+  width:750rpx;
+  height:160rpx;
+  background:#f65d89;
+  }
+.order_title{
+    width:180rpx;
+    height: 80px;
+    float: left;
+    font-family: '黑体';
+    margin-top:55rpx;
+    margin-left: 290rpx;
+    color:#fff;
+    font-size:44rpx;}
+.myorder-nav{
+  background: #fff;
+  width:750rpx;
+  height: 40rpx;
+  padding: 20rpx;
+  border-bottom: 3rpx solid #ccc;
+  font-family: '微软雅黑';
+}
+.order-nav{
+  float: left;
+  width: 125rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #333333;
+  font-family: "黑体";
+}
+.selected{
+  padding-bottom: 20rpx;
+  border-bottom: 6rpx solid #f65d89;
+}
+/*信息*/
+.unpay-wrap{
+  margin-top: 250rpx;
+  text-align: center;
+}
+.unpay-img{
+  width: 90rpx;
+  height: 120rpx;
+}
+.unpay-text{
+  font-size: 30rpx;
+  color: #999999;
+  margin: 30rpx 0;
+}
+.unpay-button{
+  font-size: 30rpx;
+  color: #f65d89;
+  background-color: #ebebeb;
+  border: 1px solid #f65d89;
+  border-radius: 50rpx;
+}
+.unpay-button1{
+  background-color: #f65d89;
+  color: #ebebeb;
+}
+/*我的订单商品属性信息*/
+.myorder-wrap{
+  width: 750rpx;
+}
+.myorder-list1{
+  padding-top: 20rpx;
+  width: 750rpx;
+  height: 50rpx;
+}
+.myorder-shop{
+  float:left;
+  width: 220rpx;
+  font-size: 30rpx;
+  margin-left:20rpx; 
+}
+.myorder-status{
+  float: right;
+  width: 490rpx;
+  text-align: right;
+  color: #f65d89;
+  font-size: 30rpx;
+  margin-right:20rpx; 
+}
+
+.myorder-list2{
+  width:750rpx;
+  height: 180rpx; 
+  background: #ebebeb;
+}
+.myorder-img{
+  padding: 20rpx;
+}
+.goods-img{
+  width: 150rpx;
+  height: 150rpx;
+  float: left;
+}
+.myorder-text{
+  width: 360rpx;
+  height: 150rpx;
+  float: left;
+  font-size: 26rpx;
+  padding:0 20rpx;
+}
+.goods-attribute{
+  font-size: 28rpx;
+  color: #999999;
+}
+.goods-quantity{
+  text-align: right;
+  font-size: 36rpx;
+  color: #999999;
+}
+.myorder-price{
+  width: 160rpx;
+  float: left;
+  height: 150rpx;
+  margin-right: 20rpx;
+}
+.goods-price{
+  text-align: right;
+  font-size: 36rpx;
+  width: 160rpx;
+  color: #ff2d4a;
+  font-family: '黑体';
+  font-weight: bold;
+  
+}
+.myorder-list3{
+  width:750rpx;
+  height:50rpx;
+  border-bottom:1px solid #ccc; 
+  padding-top:20rpx; 
+}
+.myorder-total{
+  font-family: "黑体";
+  font-size: 26rpx;
+  float: right;
+  text-align: right;
+  color: #666666;
+  margin-right: 20rpx;
+}
+.myorder-list4{
+  width:750rpx;
+  padding: 20rpx;
+  height: 60rpx;
+  border-bottom: 10rpx solid #ebebeb;
+}
+.cancel-order{
+  font-size: 22rpx;
+  background: #fff;
+  width:160rpx;
+  float: right;
+  border-radius: 0;
+  margin-right: 20rpx;
+  border:1px solid #ccc;
+  color:#666; 
+}
+.go-pay{
+  font-size: 22rpx;
+  background: #f65d89;
+  color: #fff;
+  width:160rpx;
+  float: right;
+  border-radius: 0;
+  margin-right: 40rpx;
+}
+.invite-friend{
+  font-size: 22rpx;
+  background: #f65d89;
+  color: #fff;
+  width:200rpx;
+  float: right;
+  border-radius: 0;
+  margin-right: 40rpx;
+}

@@ -1,0 +1,104 @@
+<!--index.wxml-->
+<!--提现-->
+
+
+
+<form bindsubmit="tixian" bindreset="formReset">
+  <view class="a_bg">
+  <view class="t_text">提现金额</view>
+  <input name="amount" class="aml_input" placeholder="请输入提现金额" />
+  </view>
+
+<view wx:if="{{have_bank1}}" class="wallet-list" bindtap="popup">
+ 
+    <image class="money-img" src="../../image/add.png"></image>
+    <view class="charge">添加银行卡信息</view>
+    <image class="row-img" src="../../image/row.png"></image>
+
+</view>
+
+<view wx:if="{{have_bank2}}">
+
+
+
+
+<block >
+    <view class="flex-wrp" style="flex-direction:row">
+        <view class="flex-item2 ">银行卡号：</view>
+        <view class="flex-item1 ">{{bank['cart_id']}}</view>
+    </view>
+
+    <view class="flex-wrp" style="flex-direction:row">
+        <view class="flex-item2 ">银行名称：</view>
+        <view class="flex-item1 ">{{bank['bank_name']}}</view>
+    </view>
+
+    <view class="flex-wrp" style="flex-direction:row">
+        <view class="flex-item2 ">真实姓名：</view>
+        <view class="flex-item1 ">{{bank['name']}}</view>
+    </view>
+
+    <view class="flex-wrp" style="flex-direction:row">
+        <view class="flex-item2 ">手机号码：</view>
+        <view class="flex-item1 ">{{bank['phone']}}</view>
+    </view>
+
+</block>
+</view>
+
+  <button formType="submit" class="re_submit">确认提现</button>
+</form>
+
+
+<view class="b1" hidden="{{flag}}"> 
+<view class="popup">
+  <view class="flex-wrp" style="flex-direction:row">
+      <view class="flex-item3 ">添加银行卡</view>
+      <image class="cancel-img" bindtap="outpopup" src="../../image/cancel.png"></image>
+  </view>
+  <view class="red-line"></view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="flex-wrp" style="flex-direction:row">
+      <view class="flex-item2 ">银行卡号：</view>
+      <view class="flex-item ">
+        <input name="cart_id" class="a-input" text placeholder=""/>
+      </view>
+  </view>
+
+  <view class="flex-wrp" style="flex-direction:row">
+      <view class="flex-item2 ">银行名称：</view>
+      <view class="flex-item ">
+      <input name="bank_name" class="a-input" text placeholder=""/>
+      </view>
+  </view>
+
+  <view class="flex-wrp" style="flex-direction:row">
+      <view class="flex-item2 ">真实姓名：</view>
+      <view class="flex-item ">
+      <input name="name" class="a-input" text placeholder=""/>
+      </view>
+  </view>
+
+  <view class="flex-wrp" style="flex-direction:row">
+      <view class="flex-item2 ">手机号码：</view>
+      <view class="flex-item ">
+      <input name="phone" class="a-input" text placeholder=""/>
+      </view>
+  </view>
+
+   <button formType="submit" class="b-input" bindtap="loginBtnClick">绑定</button>
+   </form>
+</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

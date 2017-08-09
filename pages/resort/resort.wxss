@@ -1,0 +1,10 @@
+/* pages/resort/resort.wxss */
+page{background: #f5f5f5;}
+.header{background:white;display: flex;justify-content: space-around;margin-top: 20rpx;padding: 20rpx 0;font-size: 35rpx;font-weight: bold;}
+.header text{border-right:1px solid #ccc; flex:1;text-align: center;}
+.header .bordernone{border: none;}
+
+.lis{background:white;display: flex;justify-content: space-around;padding: 20rpx 0;font-size: 35rpx;font-weight: bold;border-bottom: 1px solid #eee;}
+.lis text{flex:1;text-align: center;}
+.lis .fontred{color: red;}
+.lis .fontr{color: green;}

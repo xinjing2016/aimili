@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<!--钱包-->
+<!--<view class="wallet-head">
+  <view class="wallet-title">我的钱包</view>
+  <navigator url="url">
+  <view class="wallet-detail">明细</view></navigator>
+  
+</view>-->
+
+<view class="wallet-wrap">
+  <view class="balance-text">
+    余额（元）
+  </view>
+  <view style="clear:both;"></view>
+  <view class="wallet-balance">
+    {{balance}}
+  </view>
+  <navigator url="../../pages/resort/resort">
+  <view class="wallet-detail">明细</view>
+  </navigator>
+</view>
+
+ <navigator url="../../pages/top_up/top_up">
+  <view class="wallet-list">
+      <image class="money-img" src="../../image/money1.png"></image>
+      <view class="charge">充值</view>
+      <image class="row-img" src="../../image/row.png"></image>
+  </view>
+ </navigator>
+
+ <navigator url="../../pages/enchashment/enchashment">
+<view class="wallet-list">
+    <image class="money-img" src="../../image/money2.png"></image>
+    <view class="charge">提现</view>
+    <image class="row-img" src="../../image/row.png"></image>
+</view>
+ </navigator>

@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<!--发表评价-->
+<view class="about-head">
+  <view class="about-title">发表评价</view>
+</view>
+<view>
+</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+<view class="about-wrap">
+<!--
+<view class="comment-row1">
+  <image class="comment-img" src="../../image/comment1.png"></image>
+</view>
+-->
+<view class="comment-wrap">
+  <textarea class="comment-text" placeholder="宝贝满足您的期待吗？快说说您的意见吧！" auto-focus bindblur="evaluate_content"/>
+  <!--<view class="comment2-wrap">
+      <block wx:for = "{{tempFilePaths}}">
+        <image class="comment2-img" src="{{item}}" mode="aspecFill"></image>
+      </block>
+      
+      <image bindtap="chooseimage" class="comment2-img" src="../../image/comment2.png"></image>  
+  </view>-->
+  
+</view>
+</view>
+
+
+<!--评分-->
+<view class="comment-list">
+  <view class="cm-list-lf">描述相符</view>
+  <view class="cm-list-rt">
+    <!--<view class="nav {{selected.sy}}" data-name="sy" bindtap="click">
+    </view>
+    <view class="nav {{selected.sy}}" data-name="sy" bindtap="click">
+    </view>-->
+  <image class="star-img" src="{{first.f1}}" data-name="f1" bindtap="click1"></image>
+  <image class="star-img" src="{{first.f2}}" data-name="f2" bindtap="click1"></image>
+  <image class="star-img" src="{{first.f3}}" data-name="f3" bindtap="click1"></image>
+  <image class="star-img" src="{{first.f4}}" data-name="f4" bindtap="click1"></image>
+  <image class="star-img" src="{{first.f5}}" data-name="f5" bindtap="click1"></image>
+  </view>
+</view>
+<view class="comment-list">
+  <view class="cm-list-lf">物流服务</view>
+  <view class="cm-list-rt">
+  <image class="star-img" src="{{second.s1}}" data-name="s1" bindtap="click2"></image>
+  <image class="star-img" src="{{second.s2}}" data-name="s2" bindtap="click2"></image>
+  <image class="star-img" src="{{second.s3}}" data-name="s3" bindtap="click2"></image>
+  <image class="star-img" src="{{second.s4}}" data-name="s4" bindtap="click2"></image>
+  <image class="star-img" src="{{second.s5}}" data-name="s5" bindtap="click2"></image>
+  </view>
+</view>
+<view class="comment-list">
+  <view class="cm-list-lf">服务态度</view>
+  <view class="cm-list-rt">
+   <image class="star-img" src="{{third.t1}}" data-name="t1" bindtap="click3"></image>
+  <image class="star-img" src="{{third.t2}}" data-name="t2" bindtap="click3"></image>
+  <image class="star-img" src="{{third.t3}}" data-name="t3" bindtap="click3"></image>
+  <image class="star-img" src="{{third.t4}}" data-name="t4" bindtap="click3"></image>
+  <image class="star-img" src="{{third.t5}}" data-name="t5" bindtap="click3"></image>
+  </view>
+</view>
+<view>
+  <button class="feedback-button" bindtap="submit">提交评价</button>
+</view>
+
+</form>

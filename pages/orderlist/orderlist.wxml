@@ -1,0 +1,348 @@
+<!--index.wxml-->
+<view class="container">
+ <!--<view class="header">
+    <view>
+    	<text class="order_title">我的订单</text>
+    </view>
+ </view>-->
+
+<view class="myorder-nav">
+<scroll-view scroll-x="true" class="sv">
+
+  <view class="nav {{model[0]['select']}}" data-model="all" bindtap="select_model">全部</view>
+  <view class="nav {{model[1]['select']}}" data-model="dfk" bindtap="select_model">待付款</view>
+  <view class="nav {{model[2]['select']}}" data-model="dct" bindtap="select_model">待成团</view>
+  <view class="nav {{model[3]['select']}}" data-model="dfh" bindtap="select_model">待发货</view>
+  <view class="nav {{model[4]['select']}}" data-model="dsh" bindtap="select_model">待收货</view>
+  <view class="nav {{model[5]['select']}}" data-model="dpj" bindtap="select_model">待评价</view>
+    <view class="nav {{model[6]['select']}}" data-model="ptsb" bindtap="select_model">拼团失败</view>
+    <view class="nav {{model[7]['select']}}" data-model="ddqx" bindtap="select_model">订单取消</view>
+
+</scroll-view>
+</view>
+
+<!--全部订单-->
+
+
+<block wx:for="{{order}}" wx:for-item="item" wx:key="">
+
+<!--待付款-->
+<view class=" {{model[1]['show']}} {{index}}" wx:if="{{item['pay']==0 && item['cancel']!=1 }}">
+<view class="myorder-wrap">
+
+    <view class="myorder-list1">
+        <view class="myorder-shop">{{item['consignee_name']}}</view>
+        <view class="myorder-status">待支付</view>
+    </view>
+
+    <view data-order_id="{{item['order_id']}}" bindtap="order_detail">
+    <view class="myorder-list2" wx:for="{{item['goods']}}" wx:for-item="ite" wx:key="">
+
+        <view class="myorder-img">
+            <image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+        </view>
+
+        <view class="myorder-text">
+            {{ite['name']}}
+            <!--<view class="goods-attribute">化妆品净含量：10片</view>-->
+        </view>
+
+        <view class="myorder-price">
+            <view class="goods-price">￥{{ite["discount_price"]}}</view>
+            <view class="goods-quantity">x{{ite["goods_num"]}}</view>
+        </view>
+
+    </view>
+    </view>
+
+    <view class="myorder-list3">
+        <view class="myorder-total">共{{item["add_num"]}}件商品 合计：￥{{item["amount"]}}</view>
+    </view>
+    
+    <view class="myorder-list4">
+        <view class="myorder-edit">
+            <button class="go-pay" data-order_id="{{item['order_id']}}" bindtap="pay_order">去支付</button>
+            <button class="cancel-order" data-order_id="{{item['order_id']}}" bindtap="cancel_order">取消订单</button>
+        </view>
+    </view>
+</view>
+</view>
+<!--待付款-->
+</block>
+
+<block wx:for="{{order}}" wx:for-item="item" wx:key="">
+<!--待成团-->
+<view class=" {{model[2]['show']}} {{index}}" wx:if="{{item['pay']==1 && item['order_type']==1 &&item['grouped']==0&& item['cancel']==0 && item['deliver_out']==0&& item['confirm']==0&& item['evaluate']==0}}">
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+        <view class="myorder-shop">{{item['consignee_name']}}</view>
+        <view class="myorder-status">拼团中,差一人</view>
+    </view>
+
+    <view data-order_id="{{item['order_id']}}" bindtap="order_detail">
+    <view class="myorder-list2" wx:for="{{item['goods']}}" wx:for-item="ite" wx:key="">
+
+        <view class="myorder-img">
+            <image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+        </view>
+
+        <view class="myorder-text">
+            {{ite['name']}}
+            <!--<view class="goods-attribute">化妆品净含量：10片</view>-->
+        </view>
+
+        <view class="myorder-price">
+            <view class="goods-price">￥{{ite["discount_price"]}}</view>
+            <view class="goods-quantity">x{{ite["goods_num"]}}</view>
+        </view>
+
+    </view>
+    </view>
+    
+    <view class="myorder-list3">
+        <view class="myorder-total">共{{item["add_num"]}}件商品 合计：￥{{item["amount"]}}</view>
+    </view>
+    <view class="myorder-list4">
+        <view class="myorder-edit">
+            <button class="go-pay" data-order_id="{{item['order_id']}}" bindtap="invite">邀请好友参加</button>
+        </view>
+    </view>
+
+</view>
+</view>
+<!--待成团-->
+</block>
+
+<block wx:for="{{order}}" wx:for-item="item" wx:key="">
+<!--待发货-->
+<view class=" {{model[3]['show']}} {{index}}" wx:if="{{item['pay']==1 && ((item['order_type']==1 &&item['grouped']==1)||item['order_type']==0)&& item['cancel']==0 && item['deliver_out']==0&& item['confirm']==0&& item['evaluate']==0 }}">
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+        <view class="myorder-shop">{{item['consignee_name']}}</view>
+        <view class="myorder-status">
+        <block wx:if="{{item['order_type']==0}}">待发货</block>
+        <block wx:else>已成团，待发货</block>
+        </view>
+    </view>
+    <view data-order_id="{{item['order_id']}}" bindtap="order_detail">
+    <view class="myorder-list2" wx:for="{{item['goods']}}" wx:for-item="ite" wx:key="">
+        <view class="myorder-img">
+            <image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+        </view>
+        <view class="myorder-text">
+            {{ite['name']}}
+            <!--<view class="goods-attribute">化妆品净含量：10片</view>-->
+        </view>
+        <view class="myorder-price">
+            <view class="goods-price">￥{{ite["discount_price"]}}</view>
+            <view class="goods-quantity">x{{ite["goods_num"]}}</view>
+        </view>
+    </view>
+    </view>
+    <view class="myorder-list3">
+        <view class="myorder-total">共{{item["add_num"]}}件商品 合计：￥{{item["amount"]}}</view>
+    </view>
+    <view class="myorder-list4">
+        <view class="myorder-edit">
+            <button class="go-pay" bindtap="">待发货</button>
+        </view>
+    </view>
+</view>
+</view>
+<!--待发货-->
+</block>
+
+<block wx:for="{{order}}" wx:for-item="item" wx:key="">
+<!--待收货-->
+<view class=" {{model[4]['show']}} {{index}}" wx:if="{{item['pay']==1 && ((item['order_type']==1 &&item['grouped']==1)||item['order_type']==0)&& item['cancel']==0 && item['deliver_out']==1&& item['confirm']==0&& item['evaluate']==0 }}">
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+        <view class="myorder-shop">{{item['consignee_name']}}</view>
+        <view class="myorder-status">
+        <block wx:if="{{item['order_type']==0}}">卖家已发货</block>
+        <block wx:else>已成团，卖家已发货</block>
+        </view>
+    </view>
+    <view data-order_id="{{item['order_id']}}" bindtap="order_detail">
+    <view class="myorder-list2" wx:for="{{item['goods']}}" wx:for-item="ite" wx:key="">
+        <view class="myorder-img">
+            <image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+        </view>
+        <view class="myorder-text">
+            {{ite['name']}}
+            <!--<view class="goods-attribute">化妆品净含量：10片</view>-->
+        </view>
+        <view class="myorder-price">
+            <view class="goods-price">￥{{ite["discount_price"]}}</view>
+            <view class="goods-quantity">x{{ite["goods_num"]}}</view>
+        </view>
+    </view>
+    </view>
+    <view class="myorder-list3">
+        <view class="myorder-total">共{{item["add_num"]}}件商品 合计：￥{{item["amount"]}}</view>
+    </view>
+    <view class="myorder-list4">
+        <view class="myorder-edit">
+            <button class="go-pay" data-order_id="{{item['order_id']}}" bindtap="confirm">确认收货</button>
+        </view>
+    </view>
+</view>
+</view>
+<!--待收货-->
+</block>
+
+<block wx:for="{{order}}" wx:for-item="item" wx:key="">
+<!--待评价-->
+<view class=" {{model[5]['show']}} {{index}}" wx:if="{{item['pay']==1 && ((item['order_type']==1 &&item['grouped']==1)||item['order_type']==0)&& item['cancel']==0 && item['deliver_out']==1&& item['confirm']==1&& item['evaluate']==0 }}">
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+        <view class="myorder-shop">{{item['consignee_name']}}</view>
+        <view class="myorder-status">
+        <block wx:if="{{item['order_type']==0}}">待评价</block>
+        <block wx:else>已成团，待评价</block>
+        </view>
+    </view>
+    <view data-order_id="{{item['order_id']}}" bindtap="order_detail">
+    <view class="myorder-list2" wx:for="{{item['goods']}}" wx:for-item="ite" wx:key="">
+        <view class="myorder-img">
+            <image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+        </view>
+        <view class="myorder-text">
+            {{ite['name']}}
+            <!--<view class="goods-attribute">化妆品净含量：10片</view>-->
+        </view>
+        <view class="myorder-price">
+            <view class="goods-price">￥{{ite["discount_price"]}}</view>
+            <view class="goods-quantity">x{{ite["goods_num"]}}</view>
+        </view>
+    </view>
+    </view>
+    <view class="myorder-list3">
+        <view class="myorder-total">共{{item["add_num"]}}件商品 合计：￥{{item["amount"]}}</view>
+    </view>
+    <view class="myorder-list4">
+        <view class="myorder-edit">
+            <button class="go-pay" data-order_id="{{item['order_id']}}" bindtap="evaluate">去评价</button>
+        </view>
+    </view>
+</view>
+</view>
+<!--待评价-->
+</block>
+
+<block wx:for="{{order}}" wx:for-item="item" wx:key="">
+<!--拼团失败-->
+<view class=" {{model[6]['show']}} {{index}}" wx:if="{{item['pay']==1 && item['order_type']==1&&item['grouped']==2&&item['cancel']==0 && item['deliver_out']==0&& item['confirm']==0&& item['evaluate']==0 }}">
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+        <view class="myorder-shop">{{item['consignee_name']}}</view>
+        <view class="myorder-status">
+        拼团失败
+        </view>
+    </view>
+    <view data-order_id="{{item['order_id']}}" bindtap="order_detail">
+    <view class="myorder-list2" wx:for="{{item['goods']}}" wx:for-item="ite" wx:key="">
+        <view class="myorder-img">
+            <image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+        </view>
+        <view class="myorder-text">
+            {{ite['name']}}
+            <!--<view class="goods-attribute">化妆品净含量：10片</view>-->
+        </view>
+        <view class="myorder-price">
+            <view class="goods-price">￥{{ite["discount_price"]}}</view>
+            <view class="goods-quantity">x{{ite["goods_num"]}}</view>
+        </view>
+    </view>
+    </view>
+    <view class="myorder-list3">
+        <view class="myorder-total">共{{item["add_num"]}}件商品 合计：￥{{item["amount"]}}</view>
+    </view>
+    <view class="myorder-list4">
+        <view class="myorder-edit">
+            <!--<button class="go-pay" bindtap="primary">去评价</button>-->
+        </view>
+    </view>
+</view>
+</view>
+<!--拼团失败-->
+</block>
+
+<block wx:for="{{order}}" wx:for-item="item" wx:key="">
+<!--取消订单-->
+<view class=" {{model[7]['show']}} {{index}}" wx:if="{{item['pay']==1 && ((item['order_type']==1 &&item['grouped']==1)||item['order_type']==0)&& item['cancel']==1 && item['deliver_out']==0&& item['confirm']==0&& item['evaluate']==0 }}">
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+        <view class="myorder-shop">{{item['consignee_name']}}</view>
+        <view class="myorder-status">
+        订单取消
+        </view>
+    </view>
+    <view data-order_id="{{item['order_id']}}" bindtap="order_detail">
+    <view class="myorder-list2" wx:for="{{item['goods']}}" wx:for-item="ite" wx:key="">
+        <view class="myorder-img">
+            <image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+        </view>
+        <view class="myorder-text">
+            {{ite['name']}}
+            <!--<view class="goods-attribute">化妆品净含量：10片</view>-->
+        </view>
+        <view class="myorder-price">
+            <view class="goods-price">￥{{ite["discount_price"]}}</view>
+            <view class="goods-quantity">x{{ite["goods_num"]}}</view>
+        </view>
+    </view>
+    </view>
+    <view class="myorder-list3">
+        <view class="myorder-total">共{{item["add_num"]}}件商品 合计：￥{{item["amount"]}}</view>
+    </view>
+    <view class="myorder-list4">
+        <view class="myorder-edit">
+            <!--<button class="go-pay" bindtap="primary">去评价</button>-->
+        </view>
+    </view>
+</view>
+</view>
+<!--取消-->
+</block>
+
+<block wx:for="{{order}} {{index}}" wx:for-item="item" wx:key="">
+<!--订单完成-->
+<view class=" {{model[0]['show']}}" wx:if="{{item['confirm']==1 && item['evaluate']==1}}">
+<view class="myorder-wrap">
+    <view class="myorder-list1">
+        <view class="myorder-shop">{{item['consignee_name']}}</view>
+        <view class="myorder-status">
+        订单完成
+        </view>
+    </view>
+    <view data-order_id="{{item['order_id']}}" bindtap="order_detail">
+    <view class="myorder-list2" wx:for="{{item['goods']}}" wx:for-item="ite" wx:key="">
+        <view class="myorder-img">
+            <image class="goods-img" src="{{ite['display_img'][0]}}"></image>
+        </view>
+        <view class="myorder-text">
+            {{ite['name']}}
+            <!--<view class="goods-attribute">化妆品净含量：10片</view>-->
+        </view>
+        <view class="myorder-price">
+            <view class="goods-price">￥{{ite["discount_price"]}}</view>
+            <view class="goods-quantity">x{{ite["goods_num"]}}</view>
+        </view>
+    </view>
+    </view>
+    <view class="myorder-list3">
+        <view class="myorder-total">共{{item["add_num"]}}件商品 合计：￥{{item["amount"]}}</view>
+    </view>
+    <view class="myorder-list4">
+        <view class="myorder-edit">
+            <!--<button class="go-pay" bindtap="primary">去评价</button>-->
+        </view>
+    </view>
+</view>
+</view>
+<!--订单完成-->
+
+</block>
+
+</view>

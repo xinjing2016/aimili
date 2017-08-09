@@ -1,0 +1,130 @@
+<!--index.wxml-->
+<!--
+<view class="section">
+  <view class="order_address">
+    <view wx:if="{{selected_address=='null'}}">
+      <view class="address">添加收货地址</view>
+    </view>
+    <view wx:else>
+    <view class="all-address" hover-class="add-hover" bindtap="show_hide">
+         
+     <image class="dizhi-img" src="../../image/dizhi-jiantou.png"></image>
+     <image class="dizhi-img-right" src="../../image/row.png"></image>
+
+          <view class="accept-name"> 
+          {{selected_address["consignee_name"]}}</view> 
+          <view class="accept-phone">
+          {{selected_address["consignee_phone"]}}</view>
+          <view class="accept-address">收货地址：<text  wx:for="{{selected_address['detail']}}" wx:for-item="ite" wx:key="">{{ite}} </text></view>
+      </view>
+
+    </view>
+   
+    </view>
+
+<view class="{{more_address}}" >
+
+ 
+    <view class="all-address" hover-class="add-hover" wx:for="{{user_address}}" wx:for-item="item" wx:key="" wx:index="index">
+    <view data-address_index="{{index}}" bindtap="select_address">
+        <view class="accept-name">{{item["consignee_name"]}}</view> 
+        <view class="accept-phone">{{item["consignee_phone"]}}</view>
+        <view class="accept-address">
+        <block wx:if="{{item['default_address']==1}}"><text style="color:#f65d89;">[默认地址]：</text></block>
+        <block wx:else></block>
+        <text wx:for="{{item['detail']}}" wx:for-item="ite" wx:key="">{{ite}} </text></view>
+    </view>
+    </view>
+
+        <navigator url="../../pages/address/address" class="add-address">
+        <button class="address-button">添加新地址</button>
+        </navigator>
+   
+</view>
+
+<view class="address_line">
+<image class="address_line_img" src="../../image/address.png"></image>
+</view>
+
+</view>
+-->
+<!--团购订单-->
+  <view class="groups-wrap">
+
+
+            <view class="groups-lf">
+                <image class="groups-img" src="{{order['goods'][0]['display_img'][0]}}"></image>
+            </view>
+            <view class="groups-rt">
+                <view class="groups-text">
+                    {{order['goods'][0]['name']}}
+                </view>
+
+                <view class="groups-attrbute"> </view>
+   
+                <view class="groups-price">
+                    <view class="groups-jg">价格:￥{{order['amount']}}</view>
+                    <view class="groups-yj">原价:￥{{order['goods'][0]['yuanjia']}}</view>
+                    
+                </view>
+            </view>
+        </view>
+        <view class="grouping-content">
+            <view class="content-txt content-text">
+                <image class="content-ye" src="../../image/pintuan2.png"></image>拼团中，还差一个人，快去邀请好友吧~
+            </view>   
+            <view class="content-img">
+                <image class="grouping-favion" src="{{img_satar}}"></image>
+                <image class="grouping-favion" src="../../image/pintuan6.png"></image>
+            </view>
+            <view class="countdown">
+                剩余时间:<text class="countdown1"> {{clock}}</text>  
+                <text >{{micro_second}}</text>      
+            </view>
+            <view class="content-status"> 倒计时结束前人未满将拼团失败</view>
+    <!--<view class="pintuan" bindtap="orderdetail_group">
+                 <view>一键拼团</view>
+    </view> -->
+<view wx:if="{{clock!='拼团结束'}}">
+        <navigator url="../../pages/wait_goods_buy/wait_goods_buy?orders_id={{order['id']}}">
+        <view class="pintuan">
+                    <view>一键拼团</view>
+        </view>
+        </navigator>
+ </view>
+        </view>
+
+        <view class="groups-list">
+            <view class="groups-list-lf">商品名称 </view>
+            <view class="groups-list-rt clr-pink">{{order['goods'][0]['name']}}</view>
+        </view>
+
+        <view class="goods-content goods-flow">
+  <view class="ptlc">拼团流程（若人数不足时自动退款）</view>
+    <view >
+        <view class="goods-procedure">
+        <image class="procedure-img" src="../../image/product_18.png"></image>
+        支付开团或者参团
+        </view>
+        <view class="goods-procedure">
+        <image class="procedure-img" src="../../image/product_21.png"></image>
+        邀请好友
+        参加
+        </view>
+        <view class="goods-procedure">
+        <image class="procedure-img" src="../../image/product_23.png"></image>
+        人数达到
+        分别发货
+        </view>
+        <view class="goods-procedure">
+        <image class="procedure-img" src="../../image/product_25.png"></image>
+        人数不足
+        自动退款
+
+        </view>
+    </view>
+</view>
+
+
+
+

@@ -1,0 +1,379 @@
+/**index.wxss**/
+page{
+  background: #ebebeb;
+  font-family: "微软雅黑";
+  margin-bottom: 160rpx;
+}
+.about-head{
+  width: 750rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+  
+}
+.about-title{
+  margin-left: 125rpx;
+  width: 500rpx;
+  height: 40rpx;
+  float: left;
+  text-align: center;
+}
+/*商品详情*/
+.goods-content{
+  background: #fff;
+  width: 750rpx;
+  margin-bottom: 20rpx;
+}
+.goods-img{
+  width: 750rpx;
+  height: 750rpx;
+}
+.goods-name{
+  width: 710rpx;
+  font-size: 30rpx;
+  padding: 20rpx;
+}
+
+.goods-row{
+  width: 730rpx;
+  height: 70rpx;
+  padding-left: 20rpx;
+}
+.goods-price{
+  margin-right:30rpx;
+  color: #ff2d4a;
+  float: left;
+  font-size: 48rpx;
+  font-weight: bold;
+}
+.group-save{
+  height: 30rpx;
+  padding: 5rpx;
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color: #fff;
+  float: left;
+  background: #ff2d4a;
+  overflow: hidden; 
+  border: 0rpx transparent solid;
+  border-radius: 0rpx 8rpx 8rpx 5rpx;
+}
+.goods-yj{
+  width: 600rpx;
+  text-decoration: line-through;
+  color: #b7b7b7;
+  float: left;
+  font-size: 28rpx;
+}
+.goods-collection{
+  width: 100rpx;
+  float: left;
+}
+.collection-img{
+  width: 50rpx;
+  height: 50rpx;
+  cursor: pointer;
+  float: right;
+  margin-right: 70rpx;
+}
+.sale-sum{
+  font-size: 30rpx;
+}
+.goods-exp{
+  float: left;
+  width: 243rpx;
+}
+.exp-clr{
+  color:#ff2d4a;
+}
+.group-status{
+  width: 730rpx;
+  font-size: 30rpx;
+  height: 60rpx;
+  padding-top: 10rpx;
+}
+.group-list{
+  width: 750rpx;
+  /*height: 300rpx;*/
+  font-size: 27rpx;
+  color: #666666;
+}
+.group-border{
+  width: 725rpx;
+  height: 90rpx;
+  border-radius:50rpx;
+  border-top: 1rpx solid #ff2d4a; 
+  border-bottom: 1rpx solid #ff2d4a; 
+  margin-bottom: 30rpx;
+  padding-left:10rpx;
+
+}
+
+.group-list1-img{
+  width: 140rpx;
+  height: 120rpx;
+  float: left;
+  margin-top: -13rpx;
+  margin-left: -20rpx;
+}
+.group-list2{
+  width: 175rpx;
+  height: 80rpx;
+  float: left;
+  padding-top: 10rpx;
+}
+.group-list3{
+  text-align: right;
+  width: 281rpx;
+  float: left;
+  padding-top: 10rpx;
+  margin-right: 10rpx;
+}
+.group-list4{
+  width: 110rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #fff;
+  padding-left: 20rpx;
+  background: #ff2d4a;
+  float: right;
+  border-radius: 0 50rpx 50rpx 0 ;
+}
+.ptlc{
+  padding-top: 10rpx;
+  margin-bottom: 10rpx;
+  font-size: 32rpx;
+  padding-left: 30rpx;
+}
+.goods-flow{
+  height: 180rpx;
+}
+.goods-procedure{
+  padding: 5rpx;
+  width: 153.5rpx;
+  height: 70rpx;
+  float: left;
+  border: 1px #f65d89 solid;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+}
+.procedure-img{
+  width: 30rpx;
+  height: 30rpx;
+float: left;
+margin-top: 20rpx;
+}
+.goods-navigator{
+  width: 750rpx;
+  background: #fff;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 34rpx;
+  margin-bottom: 10rpx;
+}
+.goods-nav{
+  /*width: 250rpx;*/
+  width: 140rpx;
+  text-align: center;
+  float: left;
+  margin: 0rpx  55rpx;
+}
+.goods-detail{
+  display: none;
+}
+.goods-detail-lf{
+  float: left;
+  width: 300rpx;
+}
+.goods-detail-tr{
+  float: right;
+  width: 420rpx;
+}
+.goods-detail-list{
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  width: 720rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #fff;
+  margin-top: 5rpx;
+}
+.goods-info{
+  display: none;
+}
+
+.goods-info image{
+  
+  width:750rpx;
+}
+.goods-nav.active{
+
+  border-bottom: 4rpx solid #f65d89;
+}
+.goods-detail.active{
+  display: block;
+}
+.goods-info.active{
+  display: block;
+  margin-bottom: 114rpx;
+}
+.goods-coupon{
+  border: 1rpx solid #f65d89;
+  color: #f65d89;
+  width: 296rpx;
+  height: 140rpx;
+  float: left;
+  line-height: 140rpx;
+  margin:10rpx 37.5rpx;
+  text-align: center;
+
+}
+.coupon-row{
+  padding-left: 20rpx;
+  font-size: 32rpx;
+  width: 730rpx;
+}
+/*宝贝评价*/
+.goods-comment{
+  display: none;
+}
+.goods-comment.active{
+ display: block;
+}
+.comment-list{
+  color: #666666;
+  width: 750rpx;
+  margin-bottom:4rpx;  
+  background: #fff;
+  clear: both;
+  border-bottom: 1rpx solid #ebebeb;
+}
+.comment-lf{
+  width: 100rpx;
+  height: 60rpx;
+  float: left;
+  padding-left: 10rpx;
+  padding-top: 10rpx;
+}
+.comment-mid{
+  width: 460rpx;
+  float: left;
+  font-size:32rpx; 
+  padding-top: 10rpx;
+  
+}
+.comment-rt{
+  width: 180rpx;
+  height: 40rpx;
+  float: left;
+  font-size:30rpx; 
+  text-align: center;
+  line-height:35rpx;
+  margin-top:30rpx;
+
+}
+.comment-favion{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius:50%;
+
+}
+.comment-star{
+  width: 120rpx;
+  height: 20rpx;
+  float:left;
+}
+.star-status{
+  width: 400rpx;
+  height: 30rpx;
+}
+/*底部导航栏*/
+.bottom-wrap{
+  width: 750rpx;
+  height: 110rpx;
+  background: #fff;
+  position: fixed;
+  color: #fff;
+  bottom: 0;
+  font-size: 34rpx;
+  border-top: 4rpx solid #ccc;
+  
+}
+.bottom-nav{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  text-align: center;
+  font-size: 30rpx;
+  width: 110rpx;
+
+  color: #999999;
+  padding: 5rpx;
+  float: left;
+}
+.bottom-img{
+  width: 50rpx;
+  height: 50rpx;
+  display:block;
+  margin:0 auto;
+  padding-top:5%;
+
+}
+
+.contact-bt{
+
+  opacity:0.3;
+}
+
+
+.collection{
+  float: left;
+  width: 90rpx;
+  text-align: center;
+  height: 100rpx;
+  color: #999999;
+  line-height: 100rpx;
+  border-left: 1rpx solid #ccc;
+}
+.danpin{
+  float: right;
+  width: 180rpx;
+  text-align: center;
+  height: 110rpx;
+  line-height: 50rpx;
+  background: #f65d89;
+}
+.pintuan{
+  float: right;
+  width: 200rpx;
+   height: 110rpx;
+  text-align: center;
+  line-height: 50rpx;
+  background: #ff2d4a;
+}
+.bottom-nav1{
+  background: #fff;
+  color: #f65d89;
+
+}
+.big_swiper{
+  height: 750rpx;
+}
+.clr-gray{
+  color: rgb(104,104,104);
+}
+.sanjiao{
+  float: left;
+  width: 0rpx;
+  height: 0rpx;
+  border: 20rpx #ff2d4a solid;
+  border-top: 20rpx transparent solid;
+  border-left: 20rpx transparent solid;
+  border-bottom: 20rpx transparent solid;
+  /*border-radius: 5rpx;*/
+}
+.clr-pink{
+  color: #f65d89;
+}

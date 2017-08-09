@@ -1,0 +1,189 @@
+/**index.wxss**/
+page{
+  background: #ebebeb;
+}
+.wallet-head{
+  width: 750rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f65d89;
+  font-family: "黑体"
+}
+.wallet-title{
+  color: #fff;
+  margin-left: 125rpx;
+  width: 500rpx;
+  height: 40rpx;
+  float: left;
+  text-align: center;
+  font-size: 38rpx;
+}
+.wallet-detail{
+  color: #fff;
+  font-size: 34rpx;
+  width: 100rpx;
+  float: right;
+  margin-top: 55rpx;
+}
+.wallet-wrap{
+  width: 690rpx;
+  height: 160rpx;
+  background: #f65d89;
+  padding:10rpx 30rpx;
+  
+}
+.balance-text{
+  color: #fff;
+  font-size: 30rpx;
+}
+.wallet-balance{
+  font-family: "微软雅黑";
+  margin: 30rpx 0;
+  font-size: 55rpx;
+  color: #fff;
+  float: left;
+  width: 590rpx;
+}
+.wallet-list{
+  clear: both;
+  background: #fff;
+  width: 750rpx;
+  height: 90rpx;
+  border-bottom: 1px solid #ccc;
+  line-height: 90rpx;
+}
+.money-img{
+  width: 50rpx;
+  height: 50rpx;
+  padding: 20rpx;
+  float: left;
+}
+.row-img{
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+  padding: 28rpx 15rpx 0 0;
+}
+.charge{
+
+  float: left;
+}
+
+.re_submit{
+  width:600rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  background: #f65d89;
+  color: #fff;
+  font-family: '黑体';
+  margin-top:20rpx;
+}
+
+.t_text{
+  margin-left: 25rpx;
+  margin-bottom: 20rpx;
+  padding-top:20rpx;
+}
+
+.aml_input{
+  margin-left: 25rpx;
+  margin-bottom: 20rpx;
+  height: 60rpx;
+  width:640rpx;
+  border-radius: 10rpx;
+  border: 1px solid #ccc;
+  padding:10rpx 20rpx;
+  text-align:center;
+}
+.a_bg{
+  width:100%;
+  height:200rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+
+.flex-wrp{
+    width:100%;
+    height: 75rpx;
+    line-height:75rpx;
+    display:flex;
+    margin-top:2rpx;
+    background: #fff;
+
+    background-color: #FFFFFF;
+ }
+
+.flex-item{
+  border-radius: 5px;
+  margin-top:20rpx;
+    width: 400rpx;
+    height: 50rpx;
+    line-height:50rpx;
+    border: 1px solid #ccc;
+}
+
+.flex-item1{
+  border-radius: 5px;
+  margin-top:20rpx;
+    width: 400rpx;
+    height: 50rpx;
+    line-height:50rpx;
+    
+}
+
+.flex-item2{
+  margin-top:10rpx;
+  margin-left:25rpx;
+    
+}
+
+.flex-item3{
+  margin:0 auto;
+  height:90rpx;
+  line-height:90rpx;
+    
+}
+.b-input{
+  border-radius: 5px;
+  height:70rpx;
+  width:40%;
+  margin:0 auto;
+  margin-top:100rpx;
+  color:white;
+  line-height:70rpx;
+  text-align: center;
+  background-color:#F65D89;
+}
+.red-line{
+  height:2rpx;
+  background-color:#F65D89;
+}
+
+.cancel-img{
+  margin-top:20rpx;
+  width: 40rpx;
+  height: 40rpx;
+ 
+  
+}
+
+.popup{
+ 
+  height:600rpx;
+  
+  
+  background: #fff;
+  position:relative;
+  width: 90%;
+  margin:35% auto;
+  overflow: hidden;
+}
+
+
+
+.b1{position:fixed;width:100%;height:100%;top:0px;background:rgba(0,0,0,0.4);overflow: hidden;}
+
+
+
+

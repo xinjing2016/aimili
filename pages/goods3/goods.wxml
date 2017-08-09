@@ -1,0 +1,191 @@
+<!--index.wxml-->
+<!--关于我们-->
+<!--<view class="about-head">
+  <view class="about-title">商品详情</view>
+</view>-->
+
+<view class="goods-wrap">
+  <view class="goods-content">
+    <!--<view>
+    <image class="goods-img" src="../../image/product_07.png"></image>
+    </view>-->
+    <!--轮播图-->
+    <swiper class="big_swiper" indicator-dots="true" autoplay="true" interval="4000" duration="1500">
+      <view wx:for="{{goods.display_img}}" wx:key="" wx:for-item="item">
+        <swiper-item>
+          <image  src="{{item}}" class="swiper_img goods-img"></image>
+        </swiper-item>
+      </view>
+    </swiper>
+
+    <view class="goods-name">
+    {{goods.name}}
+    </view>
+    <view class="goods-row">
+      <view class="goods-price">￥{{goods.discount_price}}</view>
+      <view class="group-save">2人团省￥{{(goods.discount_price-goods.group_price)}}元</view>
+    </view>
+    <view class="goods-row">
+      <view class="goods-yj">原价:￥{{goods.price}}</view>
+      <view bindtap="collection" class="goods-collectio"><image class="collection-img" src="../../image/icon_4.png"></image></view>
+    </view>
+    <view class="goods-row sale-sum">
+      <view class="goods-exp">快递：<p class="exp-clr">包邮</p></view>
+      <view class="goods-exp">销量：<p class="exp-clr">{{goods.selled_num}}</p>笔</view>
+      <view class="goods-exp">团购量：<p class="exp-clr">{{goods.selled_group_num}}</p>笔</view>
+    </view>
+  </view>
+</view>
+
+<view class="goods-content group-list">
+  <view class="goods-row">
+    <view class="group-status">以下小伙伴正在发起团购，您可直接参与</view>
+  </view>
+  <view class="group-border">
+    <view class="group-list1">
+      <image class="group-list1-img" src="../../image/product_14.png"></image>
+    </view>
+    <view class="group-list2">
+      <view>151****2781</view>
+      <view>等你来拼~</view>
+    </view>
+    <view class="group-list3">
+      <view class="exp-clr">还差1人成团</view>
+      <view>剩余时间12:20:40结束</view>
+    </view>
+    <view class="group-list4">
+     <navigator url="url">
+     去拼团
+     </navigator>
+    </view>
+  </view>
+  <view class="group-border">
+    <view class="group-list1">
+      <image class="group-list1-img" src="../../image/product_14.png"></image>
+    </view>
+    <view class="group-list2">
+      <view>151****2781</view>
+      <view>等你来拼~</view>
+    </view>
+    <view class="group-list3">
+      <view class="exp-clr">还差1人成团</view>
+      <view>剩余时间12:20:40结束</view>
+    </view>
+    <view class="group-list4">
+    <navigator url="url">
+    去拼团
+    </navigator>
+    </view>
+  </view>
+</view>
+
+<view class="goods-content goods-flow">
+  <view class="ptlc">拼团流程（若人数不足时自动退款）</view>
+    <view >
+        <view class="goods-procedure">
+        <image class="procedure-img" src="../../image/product_18.png"></image>
+        支付开团或者参团
+        </view>
+        <view class="goods-procedure">
+        <image class="procedure-img" src="../../image/product_21.png"></image>
+        邀请好友
+        参加
+        </view>
+        <view class="goods-procedure">
+        <image class="procedure-img" src="../../image/product_23.png"></image>
+        人数达到
+        分别发货
+        </view>
+        <view class="goods-procedure">
+        <image class="procedure-img" src="../../image/product_25.png"></image>
+        人数不足
+        自动退款
+
+        </view>
+    </view>
+</view>
+
+<view class="goods-content">
+<view class="coupon-row">
+可用优惠劵
+</view>
+<view wx:for="{{coupon}}" wx:for-item="item" wx:key="">
+  <view class="goods-coupon">
+      {{item.coupon_name}}
+  </view>
+</view>
+<view style="clear:both"></view>
+</view>
+
+<view class="goods-navigator" bindtap="tabGoods">
+    <navigator class="goods-nav {{tabArr.curHdIndex=='0'? 'active' : ''}}" data-id="0">图文详情</navigator>
+    <navigator class="goods-nav {{tabArr.curHdIndex=='1'? 'active' : ''}}" data-id="1">产品信息</navigator>
+    <navigator class="goods-nav {{tabArr.curHdIndex=='2'? 'active' : ''}}" data-id="2">宝贝评价</navigator>
+</view>
+
+<!--图文详情-->
+<view class="goods-info {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+  <view wx:for="{{goods.introduce_img}}" wx:for-item="item" wx:key="">
+  <image mode="widthFix" class="goods-info-img" src="{{item}}"></image><!--图片固定了宽度750rpx-->
+  </view>
+</view>
+<!--产品信息-->
+<view class="goods-detail {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+  <view class="row goods-detail-list" wx:for="{{goods.goods_detail}}" wx:for-item="item" wx:for-index="index" wx:key=""> 
+    <view class="goods-detail-lf">{{index}}</view>
+    <view class="goods-detail-rt">{{item}}</view>
+  </view>
+  
+</view>
+<!--商品评论-->
+<view style="background:#fff;" class="goods-comment {{tabArr.curBdIndex=='2'? 'active' : ''}}">
+
+    <view  class="comment-list" wx:for="{{evaluate}}" wx:for-item="item" wx:key="">
+        <view class="comment-lf">
+        <image class="comment-favion" src="../../image/goods-comment_03.png"></image>
+        </view>
+        <view class="comment-mid">
+        <view>{{item.account}}</view>
+        <view class="star-status"><image class="comment-star" src="../../image/pinfen{{item.star}}.png"></image></view>
+        <view style="word-break: break-all">{{item.evaluate}}</view>
+        </view>
+        <view class="comment-rt">{{item.time}}</view>
+        <view style="clear:both"></view>
+    </view>
+
+
+</view>
+<view style="width:750rpx;height:100rpx;"></view>
+<view class="bottom-wrap">
+
+    <view class="bottom-nav">
+    <navigator hover-class="bottom-nav1" url="../../pages/index/index" open-type="switchTab">
+    <image class="bottom-img" src="../../image/goodsdetail2.png"></image>
+    首页
+    </navigator>
+    </view>
+    <view class="bottom-nav">
+    <navigator hover-class="bottom-nav1" url="url">
+    <contact-button  class="contact-bt"></contact-button>
+    客服
+    </navigator>
+    </view>
+    <view class="bottom-nav">
+    <view hover-class="bottom-nav1" url="url">
+    <image bindtap="add_cart" data-goods_id="{{goods.goods_id}}" class="bottom-img" src="../../image/goodsdetail1.png"></image>
+    购物车
+    </view>
+    </view>
+    <!--<view class="collection" bindtap="collection">
+      <view url="url">收藏</view>
+    </view>-->
+    
+    <view class="pintuan" bindtap="orderdetail_group">
+    <view>一键拼团</view>
+    <view>￥{{goods.group_price}}</view>
+    </view>
+    <view class="danpin" bindtap="orderdetail">
+    <view>单品</view>
+    <view>￥{{goods.discount_price}}</view>
+    </view>
+</view>

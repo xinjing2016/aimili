@@ -1,0 +1,70 @@
+/**index.wxss**/
+page{
+  background: #ebebeb;
+}
+.wallet-head{
+  width: 750rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f65d89;
+  font-family: "黑体"
+}
+.wallet-title{
+  color: #fff;
+  margin-left: 125rpx;
+  width: 500rpx;
+  height: 40rpx;
+  float: left;
+  text-align: center;
+  font-size: 38rpx;
+}
+.wallet-detail{
+  color: #fff;
+  font-size: 34rpx;
+  width: 100rpx;
+  float: right;
+  margin-top: 55rpx;
+}
+.wallet-wrap{
+  width: 690rpx;
+  height: 160rpx;
+  background: #f65d89;
+  padding:10rpx 30rpx;
+  
+}
+.balance-text{
+  color: #fff;
+  font-size: 30rpx;
+}
+.wallet-balance{
+  font-family: "微软雅黑";
+  margin: 30rpx 0;
+  font-size: 55rpx;
+  color: #fff;
+  float: left;
+  width: 590rpx;
+}
+.wallet-list{
+  clear: both;
+  background: #fff;
+  width: 750rpx;
+  height: 90rpx;
+  border-bottom: 1px solid #ccc;
+  line-height: 90rpx;
+}
+.money-img{
+  width: 50rpx;
+  height: 50rpx;
+  padding: 20rpx;
+  float: left;
+}
+.row-img{
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+  padding: 28rpx 15rpx 0 0;
+}
+.charge{
+
+  float: left;
+}

@@ -1,0 +1,39 @@
+/**index.wxss**/
+page{
+  background: #ebebeb;
+}
+.about-head{
+  width: 750rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+  
+}
+.about-title{
+  margin-left: 125rpx;
+  width: 500rpx;
+  height: 40rpx;
+  float: left;
+  text-align: center;
+}
+.feedback-text{
+  text-align: center;
+  width: 680rpx;
+  height: 120rpx;
+  background: #fff;
+  border-radius:10rpx; 
+  padding-top: 80rpx;
+  font-size: 28rpx;
+  margin-left:35rpx; 
+  margin-top: 35rpx;
+}
+.feedback-button{
+  width:680rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  background: #f65d89;
+  color: #fff;
+  font-family: '黑体';
+  margin-top:30rpx;
+  font-size: 28rpx;
+}

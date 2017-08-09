@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<!--<view class="container">-->
+ <!--<view class="header">
+    <view class="se_logo" bindtap="back">
+      <image class="se_image" src="../../image/se_icon.png"></image>
+    </view>
+    <view class="lf se_gj">
+    	<text class="aml_title">国家馆</text>
+    </view>
+ </view>-->
+
+<view class="nation_box">
+
+<view wx:for="{{nation_list}}" wx:key="" wx:for-item="item">
+
+  
+      <view class="img">
+      <navigator url="../../pages/nation_goods/nation_goods?name={{item['name']}}">
+        <image src="{{item.img_url}}" class="img_url"></image>
+      </navigator>
+      </view>
+      <!--<view class="na_rf rf">
+      <navigator url="#">
+      <image src="../../image/nation_2.gif"></image>
+      </navigator>
+      </view>-->
+  
+
+</view>
+
+ </view>
+
+
+ <!--</view>-->

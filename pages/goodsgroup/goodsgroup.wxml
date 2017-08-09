@@ -1,0 +1,17 @@
+
+<!--<view class="title">{{title}}</view>-->
+<view class="recom_box">
+    <view id="recom_mid">
+      <view class="lf recom_lf" wx:for="{{goods}}" wx:for-item="item" wx:key="">
+      <navigator url="../../pages/goods/goods?goods_id={{item['goods_id']}}">
+      <image src="{{item['display_img'][0]}}"></image>
+      <view class="re_title">{{item["name"]}}</view> 
+      </navigator>
+    	    <p class="lf goods_price">¥{{item["discount_price"]}}</p>
+          <view class="recom_arrow"></view>
+          <p class="s_box">单品优惠¥{{item["youhui"]}}元</p>
+      </view>
+    </view>
+</view>
+
+

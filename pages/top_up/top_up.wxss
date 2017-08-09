@@ -1,0 +1,65 @@
+/**top_up.wxss**/
+
+.aml_input{
+  margin: 20rpx;
+  height: 50rpx;
+  width:680rpx;
+  border-radius: 10rpx;
+  border: 1px solid #ccc;
+  padding:10rpx;
+}
+.login_box{
+  height: 100%;
+  /*background: #ebebeb fixed;*/
+  padding:25rpx; 
+}
+.dl_form{
+  width: 750rpx;
+  height: 200rpx;
+  background: #fff;
+  padding-top:10rpx;
+}
+
+.re_submit{
+  width:600rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  background: #f65d89;
+  color: #fff;
+  font-family: '黑体';
+  margin-top: 200rpx;
+}
+.rad{
+  
+  font-family: '黑体'
+}
+/*优惠劵*/
+.coupon-list{
+    background: #ccc;
+    
+}
+.coupon-radio{
+    float: left;
+    width: 50rpx;
+    display: block;
+}
+.goods-coupon{
+    float: left;
+   /* width: 327rpx;*/
+    font-size: 26rpx;
+    margin:12.5rpx;
+    border:1rpx solid #ebebeb;
+    border-radius: 15rpx;
+    padding: 20rpx 10rpx;
+    background: #f65d89;
+    color: #fff;
+    font-weight:blod;
+}
+.coupon-sample{
+    width: 144rpx;
+    float: left;
+    font-size: 26rpx;
+    padding-left: 10rpx;
+    padding-top:10rpx;
+    word-break: break-all;
+}

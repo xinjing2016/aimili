@@ -1,0 +1,393 @@
+/**index.wxss**/
+.section{
+    padding-bottom: 160rpx;
+}
+.header{
+  width:750rpx;
+  height:160rpx;
+  background:#f65d89;
+  line-height:160rpx
+  }
+.order_title{
+    width:180rpx;
+    float: left;
+    font-family: '黑体';
+    margin-left: 290rpx;
+    color:#fff;
+    font-size:44rpx;
+}
+.order_address{
+    width: 750rpx;
+   
+    border-bottom: 1rpx solid #ebebeb;
+}
+
+.address{
+    font-size: 28rpx;
+    color: #999999;
+    font-family: "黑体";
+    padding-top: 12rpx;
+    padding-left: 10rpx;
+}
+
+.address_line{
+    height: 14rpx;
+    width: 750rpx;
+}
+/*订单*/
+.cart_edit{
+    float: right;
+    color: #fff;
+    margin-top: 80rpx;
+    margin-right:20rpx;
+    font-family: '黑体';
+    font-size: 30rpx;
+}
+
+.order_wrp{
+    width:750rpx;
+    height:220rpx;
+    border-bottom: 1px solid #ccc;
+    padding:0rpx;
+}
+.order_lf{
+    margin-left: 20rpx;
+    width:210rpx;
+    height:210rpx;
+    float: left;
+}
+
+.order_rt{
+    padding:10rpx; 
+    width:500rpx;
+    height:210rpx;
+    float: right;
+}
+.cart_img{
+    width:200rpx;
+    height:200rpx;
+}
+.order_txt{
+     font-size: 30rpx;
+     width: 470rpx;
+     height: 100rpx;
+}
+.goods_attribute{
+    font-size: 24rpx;
+    width: 350rpx;
+    height: 50rpx;
+    color: #888;
+}
+.price_jg{
+    color:#ff2d4a;
+    font-size: 32rpx;
+    margin: 20px 0;
+    font-weight: bold;
+}
+.price_yj{
+    text-decoration:line-through;
+    color:#666666;
+    font-size: 24rpx;
+     margin-left:10rpx;
+}
+.order_minus {
+    width:40rpx;
+    height:40rpx;
+    float: left;
+    margin-right:20rpx; 
+   
+    }
+.order_plus{
+    width:40rpx;
+    height:40rpx;
+    float: left;
+    margin-left:20rpx; 
+
+}
+.order_price{
+    float: left;
+}
+.order_num{
+    float: right;
+}
+.goods_num{
+    float: left;
+    line-height:40rpx;
+
+}
+.submit_order{
+    width: 750rpx;
+    height: 100rpx;
+    position: fixed;
+    bottom: 0;
+    border-top:  1px solid #ccc;
+    background: #fff;
+}
+
+.submit_order_rt{
+    float:right;
+    width:750rpx;
+    height: 100rpx;
+}
+.total_price{
+     float:right;
+     width: 360rpx;
+     height: 80rpx;
+     font-size: 30rpx;
+     margin-top: 10rpx;
+     text-align: right;
+     margin-right: 20rpx;
+}
+.total_button{
+    float:right;
+    width: 220rpx;
+    height: 100rpx;
+    color:#fff;
+    background-color: #f65d89;
+    border-radius: 0rpx;
+    line-height: 100rpx;
+    text-align: center;
+}
+.heji{
+    text-align: right;
+    width: 400rpx;
+    float: right;
+    color: #f65d89;
+    font-size: 36rpx;
+}
+.discount{
+    width: 400rpx;
+    float: right;
+    font-size: 26rpx;
+    color: #a0a0a0;
+}
+/**/
+
+/*订单列表*/
+.cm_order_wrp{
+  width: 750rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5rpx;
+  padding-top: 5rpx;
+}
+.cm_order_lf{
+  float: left;
+  width: 320rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  font-size:26rpx;
+  padding: 0 20rpx;
+}
+.cm_order_rt{
+  float: left;
+  width: 380rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  padding-right: 10rpx;
+}
+.buy_number{
+    float: right;
+}
+.express{
+    font-size: 28rpx;
+    float: right;
+
+    height: 70rpx;
+
+}
+.sta_num{
+  color: #666666;
+  padding-top:13rpx; 
+  float: right;
+}
+.cm_order_img{
+  float: right;
+  margin-right:10rpx;
+  width:40rpx;
+  height:40rpx;
+  margin-top: 20rpx;
+}
+.wechat_pay{
+    float: right;
+    color: #666;
+    font-size: 26rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+.accept-name{
+    margin-right: 20rpx;
+    display: inline-block;
+    
+}
+.accept-phone{
+    
+    display: inline-block;
+    text-align: right;
+}
+.accept-address{
+    padding-top: 10rpx;
+    /*clear: both;*/
+}
+.all-address{
+    padding: 20rpx;
+    width: 720rpx;
+    word-break: break-all;
+    font-size: 28rpx;
+    clear: both;
+    /*border-bottom: 2rpx solid #ebebeb;*/
+    cursor: pointer;
+    color: #222;
+}
+.add-hover{
+    color: #ff2d4a;
+}
+/*优惠劵*/
+.coupon-list{
+    background: #ccc;
+    
+}
+.coupon-radio{
+    float: left;
+    width: 50rpx;
+    display: block;
+}
+.goods-coupon{
+    float: left;
+    width: 327rpx;
+    font-size: 26rpx;
+    margin:12.5rpx;
+    border:1rpx solid #ebebeb;
+    border-radius: 15rpx;
+    padding: 20rpx 10rpx;
+    background: #f65d89;
+    color: #fff;
+    font-weight:blod;
+}
+.coupon-sample{
+    width: 205rpx;
+    float: left;
+    font-size: 26rpx;
+    padding-left: 10rpx;
+    padding-top:10rpx;
+    word-break: break-all;
+}
+.pay-way{
+   
+    width: 750rpx;
+    padding-top: 10rpx;
+}
+.add-address{
+    width: 220rpx;
+    padding-left:265rpx;
+    text-align: center;
+    padding-top: 10rpx;
+}
+.address-button{
+    font-size: 30rpx;
+    width: 220rpx;
+    background: #f65d89;
+    color: #fff;
+}
+.address_img{
+    width: 50rpx;
+    height: 50rpx;
+    float: left;
+    padding-top: 10rpx;
+}
+
+
+.block{
+    display: block;
+}
+.none{
+    display:none;
+}
+.dizhi-img{
+    width: 35rpx;
+    height:45rpx;
+    float: left;
+    margin-top: 27rpx;
+    margin-right:10rpx;
+}
+/*.dizhi-div{
+    width: 35rpx;
+    height: 200%;
+    display: inline-block;
+
+}*/
+.dizhi-img-right{
+    width: 35rpx;
+    height:45rpx;
+    float: right;
+    margin-top: 26rpx;
+    /*margin-right:10rpx;*/
+}
+.radio-style{
+    font-weight: bold;
+}
+.address_line{
+   /* height: 26rpx;*/
+    width: 750rpx;
+    background-color: rgb(235, 235, 235);
+    position: relative;
+}
+.address_line_img{
+    height: 14rpx;
+    width: 750rpx;
+    position: absolute;
+    top: -1rpx;
+}
+
+
+
+.time-list{
+    position: fixed;
+    bottom: -1rpx;
+    z-index: 999;
+    width: 100%;
+
+}
+.sure{
+    width: 100%;
+    height: 80rpx;
+    background: rgb(235,235,235);
+    line-height: 80rpx;
+    vertical-align: middle;
+}
+.sure button{
+    background: rgb(154,154,154);
+    display: inline-block;
+    padding: 0rpx 15rpx;
+    line-height: 50rpx;
+    margin-top:15rpx; 
+    
+}
+.left{
+    float: left;
+    margin-left: 40rpx;
+}
+.right{
+    float: right;
+    margin-right: 40rpx;  
+}
+.body{
+    position: absolute;
+    height: 1005rpx;
+    width: 100%;
+    z-index: 666;
+    background: black;
+    opacity: 0.6;
+}
+.shijian{
+    text-align: center;
+    background: white;
+    color: rgb(154,154,154);
+    border-bottom: 1rpx solid rgb(209,209,209);
+    font-size: 35rpx;
+    line-height: 60rpx;
+}
+.text_black{
+    color: black;
+}

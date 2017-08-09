@@ -1,0 +1,154 @@
+<!--<view class="title">{{title}}</view>-->
+
+<!--pages/classify/classify.wxml-->
+<view class="header" bindtap="all">
+    <view class="item {{selected_nav=='1'? 'active' : ''}}" data-id="1" >综合</view>
+    <view class="item {{selected_nav=='2'? 'active' : ''}}" data-id="2" bindtap="sell_order">销量<image src="{{IMGURL}}{{sell_img}}.png" class="price_img"></image></view>
+    <view class="item {{selected_nav=='3'? 'active' : ''}}" data-id="3" bindtap="show_price">价格<image src="{{IMGURL}}{{pricep_img}}.png" class="price_img"></image></view>
+    <view class="item {{selected_nav=='4'? 'active' : ''}}" data-id="4" bindtap="show_sx">筛选<image src="{{IMGURL}}sx_{{sx_img}}.png" class="sx_img"></image></view>
+</view>
+
+<!--综合筛选-->
+<view style="display:{{sx}}">
+    
+    <!--选择的项-->
+    <view class="selected_wrap">
+        <view class="selected" wx:for="{{select}}" wx:key="" wx:for-item="item">
+            <view class="selected_item" data-name="{{item}}" bindtap="del_sel">{{item}}
+            <image class="select-no" src="{{IMGURL}}select-no.png"></image>
+            </view>
+        </view>
+    </view>
+    <!--选择的项-->
+
+
+    <view class="select">
+    
+
+<!--选项内容-->
+<scroll-view scroll-y="true" style="height:870rpx;">
+    <!--选择分类-->
+    <view class="classify">
+        <view class="s_i {{xuanzhe.brand}}" data-model="brand" bindtap="click">品牌</view>
+        <view class="line_c"></view>
+        <view class="s_i {{xuanzhe.style}}" data-model="style" bindtap="click">分类</view>
+        <view class="line_c"></view>
+        <view class="s_i {{xuanzhe.function}}" data-model="function" bindtap="click">功效   </view>
+        <view class="line_c"></view>
+        <view class="s_i {{xuanzhe.price}}" data-model="price" bindtap="click">价格</view>
+        <view class="line_c"></view>
+    </view>
+    <!--选择分类-->
+
+    <view class="option">
+        <!--品牌选项-->
+        <view wx:for="{{brand}}"  wx:key="" wx:for-index="index" wx:for-item="brand"     style="display:{{model.brand}}">
+            <view class="o_i"  data-brandid="{{index}}" bindtap="brand">
+            <view class="selected-left" data-brandid="{{index}}" catchtap="brand">
+            <image class="selected-img" src="{{brand['brand_img']}}" data-brandid="{{index}}" catchtap="brand"></image>
+
+            <image style="display:{{brand.show}}" src="{{IMGURL}}select-yes.png" class="select_yes" data-brandid="{{index}}" catchtap="brand"></image>
+            </view>
+<!--
+            <view class="selected-right" data-brandid="{{index}}" catchtap="brand">
+            <image style="display:{{brand.show}}" src="{{IMGURL}}select-yes.png" class="select_yes" data-brandid="{{index}}" catchtap="brand"></image>
+            </view>
+-->
+            </view>
+            <view class="line_o">
+            </view>
+        </view>
+        <!--品牌选项-->
+
+        <!--分类选项-->
+        <view wx:for="{{style}}"  wx:key="" wx:for-index="index" wx:for-item="style" style="display:{{model.style}}">
+            <view class="o_i" data-styleid="{{index}}" bindtap="style">
+            <view class="selected-left" data-styleid="{{index}}" catchtap="style">
+            {{style.name}}
+
+       <image style="display:{{style.show}}" src="{{IMGURL}}select-yes.png" class="select_yes"></image>
+            </view>
+</view>
+            <view class="line_o"></view>
+        </view>
+        <!--分类选项-->
+
+        <!--功效选项-->
+        <view wx:for="{{function}}" wx:key=""  wx:for-index="index" wx:for-item="function" style="display:{{model.function}}">
+            <view class="o_i" data-functionid="{{index}}" bindtap="function">
+            <view class="selected-left" data-functionid="{{index}}" catchtap="function">{{function.name}}
+            <image style="display:{{function.show}}" src="{{IMGURL}}select-yes.png" class="select_yes"></image>
+            
+            </view>
+        </view>
+            <view class="line_o"></view>
+        </view>
+        <!--功效选项-->
+
+        <!--价格选项-->
+        <view wx:for="{{price}}" wx:key=""  wx:for-index="index" wx:for-item="price" style="display:{{model.price}}">
+            <view class="o_i" data-priceid="{{index}}" bindtap="price">
+            <view class="selected-left" data-priceid="{{index}}" catchtap="price">
+            {{price.name}}
+             <image style="display:{{price.show}}" src="{{IMGURL}}select-yes.png" class="select_yes"></image>
+            </view>
+           
+            </view>
+            <view class="line_o"></view>
+            
+        </view>
+        <!--自定义价格-->
+        <!--
+        <view  wx:key=""  wx:for-index="index" wx:for-item="price" style="display:{{model.price}}">
+            <view  class="o_i">
+               <view class="selected-left">
+               自定义
+                <view class="right_margin">
+                    <input class="back_gray" placeholder="最低价"/>
+                    <text>—</text>
+                    <input class="back_gray" placeholder="最高价"/>
+                </view>
+               </view>
+            </view>
+            <view class="line_o"></view>
+        </view>
+        -->
+        <!--价格选项-->
+    </view>
+    
+</scroll-view>
+<!--选项内容-->
+</view>
+
+
+<view class="queryl" bindtap="re_select">重置</view><view class="queryr" bindtap="query_request">确认</view>
+
+</view>
+<!--综合筛选-->
+
+<view class="se_box" style="display:{{goods_display}};">
+<!--一列-->
+<view wx:for="{{goods}}" wx:key="" wx:for-item="item">
+
+  <navigator url="../../pages/goods/goods?goods_id={{item['goods_id']}}" class="se_mid" >
+    <view class="se_lf" >
+      <image class="pic-product" src="{{item['display_img'][0]}}"></image>
+    </view>
+    <view class="se_rt">
+    <view class="se-title">
+    {{item["name"]}}
+    </view>
+    		<view class="se_midp">
+    			<text class="se_price">¥{{item["discount_price"]}}</text>
+          <text class="se_s">原价¥{{item["price"]}}</text>
+    		</view>
+        <view>
+    			<text class="se_num">销量：<text class="se_scl">{{item["selled_num"]}}</text>笔</text>
+          <text class="se_num">团购量<text class="se_scl">{{item["selled_group_num"]}}</text>笔</text>
+          <text class="se_pt ">去拼团 </text>
+    		</view>
+    </view>
+  </navigator>
+
+</view>
+</view>

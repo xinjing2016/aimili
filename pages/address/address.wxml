@@ -1,0 +1,132 @@
+<!--index.wxml-->
+<view class="container" style="display:{{address_block}};">
+<!--<view class="orderdetail-txt">
+<view class="orderdetail-title">收货地址</view>
+</view>-->
+
+
+<view wx:for="{{address}}" wx:key="" wx:for-item="item" wx:for-index="index"><!--循环开始-->
+<view class="accept-address">
+    <view class="address-xx">
+        <view class="user-name">{{item.consignee_name}} {{item.consignee_phone}}</view>
+        <view class="user-address">
+            <view wx:for="{{item.detail}}" wx:for-item="ite" class="detail">
+                {{ite}}
+            </view>
+        </view>
+    </view>
+    <view class="address-edit">
+        <view class="adedit-lf">
+        <view wx:if="{{item.default_address!=0}}">
+            <view class="default-nav" hover-class="default-nav1">
+            <image class="default-img" src="../../image/addaddress_03.png">
+            </image>
+            默认地址  
+            </view>
+        </view>
+        <view wx:else>
+            <view class="default-nav" hover-class="default-nav1" bindtap="default_address" data-index="{{index}}">
+            设为默认  
+            </view>
+        </view>
+            
+        </view>
+        <view class="adedit-rt">
+        <view class="edit-nav">
+        <image class="adedit-img" src="../../image/addaddress_05.png">
+        </image>
+        <view class="edit-text" bindtap="edit_address" data-index="{{index}}">编辑</view>
+        </view>
+        <view class="edit-nav">
+        <image class="adedit-img" src="../../image/addaddress_07.png">
+        </image>
+        <view class="edit-text" bindtap="delete_address" data-address_id="{{item.address_id}}">删除</view>
+        </view>
+        </view>
+    </view>
+</view>
+</view><!--循环结束-->
+
+
+<view class="add-address">
+    <button class="addaddress-button" bindtap="add_address_btn">
+    <image class="addaddress-img" src="../../image/addaddress.png"></image>
+    <view class="addaddress-text">添加地址</view>
+    </button>
+</view>
+
+</view>
+
+
+<view style="display:{{add_address_block}};opacity:{{opacity}};">
+<view class="add_address">
+    <!--<view class="address-title">
+    <view class="new-address">新增地址</view>
+    <image class="address-cancel" src="../../image/cancel.png"></image>
+    </view>-->
+    <form bindsubmit="new_address_formSubmit" bindreset="formReset">
+  <picker-view bindchange="bindChange" indicator-style="in_st" class="address-pick">
+    <picker-view-column>
+      <view class="address-cl" wx:for="{{province}}" wx:for-item="item" wx:key="" wx:for-index="index">{{item.district}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view class="address-cl" wx:for="{{city}}" wx:for-item="item" wx:key="" wx:for-index="index">{{item.district}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view class="address-cl" wx:for="{{town}}" wx:for-item="item" wx:key="" wx:for-index="index">{{item.district}}</view>
+    </picker-view-column>
+  </picker-view>
+    <view class="add-row">
+    <view class="selected-row">
+    <view class="add-selected">已选地址:</view>
+    <view class="address-selected">{{select_province}}</view>
+    <view class="address-selected"> {{select_city}}</view>
+    <view class="address-selected">{{select_town}}</view>
+    </view>
+    <input type="text" name="new_name" class="address-input2" placeholder="收货人"/> 
+    <input type="text" name="new_phone" class="address-input2" placeholder="手机号码"/> 
+    <input type="text" name="new_detail" class="address-input2" placeholder="详细地址"/> 
+  </view>
+    <button class="address-submit" form-type="submit">保存</button>
+    <button class="address-submit" bindtap="cancel">取消</button>
+  </form>
+</view>
+</view>
+
+
+<view style="display:{{edit_address_block}};opacity:{{opacity}};">
+<view class="add_address">
+    <!--<view class="address-title">
+    <view class="new-address">编辑地址</view>
+    <image class="address-cancel" src="../../image/cancel.png"></image>
+    </view>-->
+    <form bindsubmit="edit_address_formSubmit" bindreset="formReset">
+  <picker-view bindchange="ebindChange" indicator-style="in_st" class="address-pick">
+    <picker-view-column>
+      <view class="address-cl" wx:for="{{eprovince}}" wx:for-item="item" wx:key="" wx:for-index="index">{{item.district}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view class="address-cl" wx:for="{{ecity}}" wx:for-item="item" wx:key="" wx:for-index="index">{{item.district}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view class="address-cl" wx:for="{{etown}}" wx:for-item="item" wx:key="" wx:for-index="index">{{item.district}}</view>
+    </picker-view-column>
+  </picker-view>
+    <view class="add-row">
+    <view class="selected-row">
+    <view class="add-selected">已选地址:</view>
+    <view class="address-selected">{{eselect_province}}</view>
+    <view class="address-selected"> {{eselect_city}}</view>
+    <view class="address-selected">{{eselect_town}}</view>
+    </view>
+    <input type="text" name="edit_name" value="{{consignee_name}}" class="address-input2" placeholder="收货人"/> 
+    <input type="text" name="edit_phone" value="{{consignee_phone}}" class="address-input2" placeholder="手机号码"/> 
+    <input type="text" name="edit_detail" class="address-input2" placeholder="详细地址"/> 
+  </view>
+    <button class="address-submit" form-type="submit">保存</button>
+    <button class="address-submit" bindtap="cancel">取消</button>
+  </form>
+</view>
+</view>
+
+

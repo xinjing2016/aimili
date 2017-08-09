@@ -1,0 +1,84 @@
+/**index.wxss**/
+page{
+  background: #ebebeb;
+}
+.about-head{
+  width: 750rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+  
+}
+.about-title{
+  margin-left: 125rpx;
+  width: 500rpx;
+  height: 40rpx;
+  float: left;
+  text-align: center;
+}
+
+.feedback-button{
+  width:680rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  background: #f65d89;
+  color: #fff;
+  font-family: '黑体';
+  margin-top:30rpx;
+  font-size: 28rpx;
+}
+.comment-row1{
+  width: 750rpx;
+  height: 80rpx;
+  margin-top: 2rpx;
+  background: #fff;
+}
+.comment-img{
+  width: 80rpx;
+  height: 70rpx;
+  margin-top: 5rpx;
+  padding-left:20rpx; 
+}
+.comment-text{
+  width: 750rpx;
+  height: 250rpx;
+  background: #fff;
+  padding: 20rpx;
+  font-size: 28rpx;
+  margin-top: 2rpx;
+}
+.comment2-img{
+  width: 160rpx;
+  height:150rpx;
+  padding-left:20rpx; 
+}
+.comment-wrap{
+  background: #fff;
+  margin-bottom:30rpx;
+}
+.comment-list{
+  width: 750rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-left: 30rpx;
+  padding-top:20rpx; 
+  background: #fff;
+  font-size: 36rpx;
+  color: #666;
+}
+.cm-list-lf{
+  float: left;
+}
+.star-img{
+  margin-top:5rpx;
+  margin-left: 25rpx;
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+}
+.nav{
+  width:26rpx;
+  height:26px;
+  margin: 0rpx;
+  background: url('../../image/comment3.png');
+}
